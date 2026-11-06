@@ -1,0 +1,57 @@
+{
+  "workers": 4,
+  "n": 5000,
+  "p": 6000,
+  "test_n": 5000,
+  "repeats": 300,
+  "epsilon": 1.0,
+  "size": 12,
+  "seed": 2026110601,
+  "noise": "t3",
+  "methods": [
+    "sqr_sr_np",
+    "sqr_sr",
+    "sqr_iht_np",
+    "sqr_iht",
+    "huber_iht"
+  ],
+  "output": "<original-project>/results/screening_stress_t3_r300_test5000",
+  "reuse_from": null,
+  "scenarios": [
+    [
+      "reference_ar",
+      0.1
+    ],
+    [
+      "strong_ar",
+      0.8
+    ],
+    [
+      "strong_ar",
+      0.95
+    ],
+    [
+      "cancellation",
+      0.8
+    ],
+    [
+      "cancellation",
+      0.95
+    ],
+    [
+      "suppressor",
+      0.8
+    ],
+    [
+      "suppressor",
+      0.95
+    ]
+  ],
+  "source_digest": "2932e7942f69ef8ef7c4296a9aeeeba80e7c5d2f69150d5e89c3210534c59afc",
+  "runner_sha256": "91e94f1e4b50db25d8e7476788280fb9fa58b77607f8193273a3ad47f65ab5a6",
+  "diagnostic_only": true,
+  "tau": 0.5,
+  "summary_format": "mean_se",
+  "delta": 0.000853361401289296,
+  "scope": "Synthetic processed-input per-fit accounting; inherits pipeline guarantees"
+}

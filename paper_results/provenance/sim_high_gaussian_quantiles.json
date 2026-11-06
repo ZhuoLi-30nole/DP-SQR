@@ -1,0 +1,66 @@
+{
+  "run_spec": {
+    "fingerprint": "ba05b5bc12aefac739e4a0759ed6850bda92fbb32f3acb2bbdfbeccb5864036d",
+    "config": {
+      "version": "20261101-fixed-rules-v1",
+      "seed": 2026110101,
+      "repeats": 300,
+      "test_n": 5000,
+      "epsilon": [
+        0.75,
+        1.0
+      ],
+      "tau": [
+        0.25,
+        0.75
+      ],
+      "delta_rule": "10*n**(-1.1)",
+      "initializer_projection": null,
+      "hyperparameter_search": false,
+      "regime": "high",
+      "study": "simulation",
+      "working_sparsity": 12,
+      "design": {
+        "n": [
+          10000
+        ],
+        "p": [
+          12000
+        ],
+        "sparsity": [
+          6
+        ],
+        "noise": [
+          "gaussian"
+        ]
+      }
+    },
+    "source_digest": "2932e7942f69ef8ef7c4296a9aeeeba80e7c5d2f69150d5e89c3210534c59afc",
+    "data_digest": null
+  },
+  "manifest": {
+    "protocol": "20261101-fixed-rules-v1",
+    "plan": {
+      "scenario_jobs": 600,
+      "complete_fits": 3600,
+      "method_fit_counts": {
+        "sqr_sr": 1200,
+        "sqr_sr_np": 600,
+        "sqr_iht": 1200,
+        "sqr_iht_np": 600
+      },
+      "repeats": 300,
+      "diagnostic_only": false,
+      "note": "nonDP fitted once per shared sample, not once per epsilon; LAD/OLS coefficient-only"
+    },
+    "selected_jobs": 600,
+    "workers": 1,
+    "estimated_bytes_per_worker": 6720000000,
+    "python": "3.12.10",
+    "benchmark_preprocessing": "training-only; public-data research, not raw-record DP preprocessing",
+    "complete": true,
+    "full_grid": true,
+    "n_rows": 3600,
+    "n_failed": 0
+  }
+}

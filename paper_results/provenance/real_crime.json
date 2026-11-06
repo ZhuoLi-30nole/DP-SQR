@@ -1,0 +1,68 @@
+{
+  "run_spec": {
+    "fingerprint": "e412aef08aa6b044ab1bce700fee4eacffbdc3eb9bc6993507ea43a7c5ebcfae",
+    "config": {
+      "version": "20261101-fixed-rules-v1",
+      "seed": 2026110101,
+      "repeats": 300,
+      "test_n": 5000,
+      "epsilon": [
+        0.3,
+        0.5,
+        0.9
+      ],
+      "tau": [
+        0.25,
+        0.5,
+        0.75
+      ],
+      "delta_rule": "10*n**(-1.1)",
+      "initializer_projection": null,
+      "hyperparameter_search": false,
+      "study": "real",
+      "regime": "crime",
+      "sample_sizes": [
+        500,
+        800,
+        1100,
+        1500,
+        1900
+      ],
+      "working_sparsity": 5,
+      "train_fraction": 0.8,
+      "preprocessing": "training_only_public_benchmark",
+      "coefficient_sample_size": null,
+      "coefficient_epsilon": 0.9,
+      "coefficient_tau": 0.5
+    },
+    "source_digest": "2932e7942f69ef8ef7c4296a9aeeeba80e7c5d2f69150d5e89c3210534c59afc",
+    "data_digest": "6f319836f297452065cfad0adc8804c3d01903567ad76b968b8e102d4359da9e"
+  },
+  "manifest": {
+    "protocol": "20261101-fixed-rules-v1",
+    "plan": {
+      "scenario_jobs": 4500,
+      "complete_fits": 45000,
+      "method_fit_counts": {
+        "sqr_sr": 13500,
+        "sqr_sr_np": 4500,
+        "sqr_iht": 13500,
+        "sqr_iht_np": 4500,
+        "huber_iht": 4500,
+        "cai_iht": 4500
+      },
+      "repeats": 300,
+      "diagnostic_only": false,
+      "note": "nonDP fitted once per shared sample, not once per epsilon; LAD/OLS coefficient-only"
+    },
+    "selected_jobs": 4500,
+    "workers": 1,
+    "estimated_bytes_per_worker": 134217728,
+    "python": "3.12.10",
+    "benchmark_preprocessing": "training-only; public-data research, not raw-record DP preprocessing",
+    "complete": true,
+    "full_grid": true,
+    "n_rows": 45000,
+    "n_failed": 0
+  }
+}

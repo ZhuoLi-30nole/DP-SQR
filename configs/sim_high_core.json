@@ -1,0 +1,36 @@
+{
+  "version": "20261101-fixed-rules-v1",
+  "seed": 2026110101,
+  "repeats": 300,
+  "test_n": 5000,
+  "epsilon": [
+    0.5,
+    0.75,
+    1.0
+  ],
+  "tau": [
+    0.5
+  ],
+  "delta_rule": "10*n**(-1.1)",
+  "initializer_projection": null,
+  "hyperparameter_search": false,
+  "regime": "high",
+  "study": "simulation",
+  "working_sparsity": 12,
+  "design": {
+    "n": [
+      5000,
+      7500,
+      10000
+    ],
+    "p": [
+      12000
+    ],
+    "sparsity": [
+      6
+    ],
+    "noise": [
+      "gaussian"
+    ]
+  }
+}

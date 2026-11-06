@@ -1,0 +1,22 @@
+\begin{table}[!htb]
+\centering\begingroup
+
+\caption{Application designs. The dimension $p$ includes the intercept.}
+\label{tab:real-data-design}
+\small\journaltablestyle
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.23\linewidth}XX@{}}
+\toprule
+ & Housing & Communities and Crime \\
+\midrule
+Available records & 20,640 & 1,994 \\
+$p$ & 6 & 99 \\
+$Y$ & Log median house value & ViolentCrimesPerPop \\
+$n_{\mathrm{train}}$ & 4,000, 8,000, 12,000, 16,000 & 400, 640, 880, 1,200, 1,520 \\
+$n_{\mathrm{test}}$ & $n_{\mathrm{train}}/4$ & $n_{\mathrm{train}}/4$ \\
+$\epsilon$ & 0.3, 0.5, 0.9 & 0.3, 0.5, 0.9 \\
+$\delta$ & $10n_{\mathrm{train}}^{-1.1}$ & $10n_{\mathrm{train}}^{-1.1}$ \\
+$\tau$ & 0.25, 0.5, 0.75 & 0.25, 0.5, 0.75 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{table}

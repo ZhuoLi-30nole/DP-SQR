@@ -1,0 +1,25 @@
+\begin{table}[!tb]
+\centering\begingroup
+
+\caption{Excess test check loss at $n_{\mathrm{train}}=1000$, $p=10$, and $\tau=0.5$.}
+\label{tab:sim-low-pe}
+\fontsize{8.5}{10.5}\selectfont
+\journaltablestyle
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llrrrrr@{}}
+\toprule
+Error & $\epsilon$ & \shortstack{DP-SQR\\GD} & \shortstack{nonPrivate\\SQR-GD} & \shortstack{Tran\\SGD} & \shortstack{Tran\\OPM} & \shortstack{DP-Huber\\GD}\\
+\midrule
+Gaussian & 0.1 & \mbox{0.410 (0.013)} & \mbox{0.007 (0.00014)} & \mbox{0.609 (0.013)} & \mbox{0.284 (0.0072)} & \mbox{1.156 (0.039)}\\
+Gaussian & 0.5 & \mbox{0.019 (0.00054)} & \mbox{0.007 (0.00014)} & \mbox{0.056 (0.0017)} & \mbox{0.073 (0.0025)} & \mbox{0.132 (0.003)}\\
+Gaussian & 0.9 & \mbox{0.011 (0.00026)} & \mbox{0.007 (0.00014)} & \mbox{0.016 (0.00045)} & \mbox{0.030 (0.001)} & \mbox{0.080 (0.0016)}\\
+$t_3$ & 0.1 & \mbox{0.433 (0.014)} & \mbox{0.009 (0.0002)} & \mbox{0.576 (0.013)} & \mbox{0.269 (0.0066)} & \mbox{1.141 (0.04)}\\
+$t_3$ & 0.5 & \mbox{0.021 (0.00056)} & \mbox{0.009 (0.0002)} & \mbox{0.058 (0.0017)} & \mbox{0.078 (0.0028)} & \mbox{0.128 (0.0028)}\\
+$t_3$ & 0.9 & \mbox{0.013 (0.00033)} & \mbox{0.009 (0.0002)} & \mbox{0.019 (0.00049)} & \mbox{0.034 (0.00097)} & \mbox{0.078 (0.0017)}\\
+Cauchy & 0.1 & \mbox{0.399 (0.011)} & \mbox{0.014 (0.00026)} & \mbox{0.522 (0.011)} & \mbox{0.234 (0.0054)} & \mbox{1.225 (0.048)}\\
+Cauchy & 0.5 & \mbox{0.030 (0.00078)} & \mbox{0.014 (0.00026)} & \mbox{0.070 (0.0018)} & \mbox{0.082 (0.0026)} & \mbox{0.165 (0.0042)}\\
+Cauchy & 0.9 & \mbox{0.019 (0.00047)} & \mbox{0.014 (0.00026)} & \mbox{0.023 (0.00065)} & \mbox{0.040 (0.0012)} & \mbox{0.091 (0.0021)}\\
+\bottomrule
+\end{tabular*}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize\raggedright Entries are mean excess check losses with SE in parentheses.\end{minipage}
+\endgroup\end{table}

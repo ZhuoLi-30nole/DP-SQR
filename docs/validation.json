@@ -1,0 +1,214 @@
+{
+  "date": "2026-11-06",
+  "python": "3.12.10",
+  "unit_tests": {
+    "count": 12,
+    "passed": 12
+  },
+  "smoke_runs": [
+    {
+      "group": "smoke_real_crime",
+      "complete": true,
+      "n_failed": 0,
+      "n_rows": 120
+    },
+    {
+      "group": "smoke_real_housing",
+      "complete": true,
+      "n_failed": 0,
+      "n_rows": 148
+    },
+    {
+      "group": "smoke_sim_high",
+      "complete": true,
+      "n_failed": 0,
+      "n_rows": 168
+    },
+    {
+      "group": "smoke_sim_low",
+      "complete": true,
+      "n_failed": 0,
+      "n_rows": 200
+    }
+  ],
+  "screening_smoke": {
+    "n": 60,
+    "p": 20,
+    "test_n": 80,
+    "repeats": 1,
+    "workers": 2,
+    "rows": 35
+  },
+  "figure_comparison": [
+    {
+      "figure": "fig2_no_frappe.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        1440
+      ],
+      "new_size": [
+        2160,
+        1440
+      ]
+    },
+    {
+      "figure": "fig3_no_frappe.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        1530
+      ],
+      "new_size": [
+        2160,
+        1530
+      ]
+    },
+    {
+      "figure": "sim_high_core.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        1440
+      ],
+      "new_size": [
+        2160,
+        1440
+      ]
+    },
+    {
+      "figure": "figure5_robustness_eps1.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        1530
+      ],
+      "new_size": [
+        2160,
+        1530
+      ]
+    },
+    {
+      "figure": "figure6_housing_no_frappe.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        2100
+      ],
+      "new_size": [
+        2160,
+        2100
+      ]
+    },
+    {
+      "figure": "figure7_community_log.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        2100
+      ],
+      "new_size": [
+        2160,
+        2100
+      ]
+    },
+    {
+      "figure": "fig2_with_frappe.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        1440
+      ],
+      "new_size": [
+        2160,
+        1440
+      ]
+    },
+    {
+      "figure": "fig3_with_frappe.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        1530
+      ],
+      "new_size": [
+        2160,
+        1530
+      ]
+    },
+    {
+      "figure": "sim_low_dimensions.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        2220
+      ],
+      "new_size": [
+        2160,
+        2220
+      ]
+    },
+    {
+      "figure": "figure5_robustness_eps0.75.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        1530
+      ],
+      "new_size": [
+        2160,
+        1530
+      ]
+    },
+    {
+      "figure": "sim_high_support_size.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        1410
+      ],
+      "new_size": [
+        2160,
+        1410
+      ]
+    },
+    {
+      "figure": "figure6_housing.pdf",
+      "same_pixels": true,
+      "original_size": [
+        2160,
+        2100
+      ],
+      "new_size": [
+        2160,
+        2100
+      ]
+    }
+  ],
+  "table_verification": {
+    "status": "passed",
+    "source_digest": "2932e7942f69ef8ef7c4296a9aeeeba80e7c5d2f69150d5e89c3210534c59afc",
+    "figure_fixtures": 12,
+    "numeric_tables": 9,
+    "scope": "Archived-data reconstruction; full 300-repeat fits were not rerun"
+  },
+  "full_experiment_rerun": false,
+  "fresh_dependency_install": false,
+  "english_standardization": {
+    "original_source_digest": "2932e7942f69ef8ef7c4296a9aeeeba80e7c5d2f69150d5e89c3210534c59afc",
+    "release_source_digest": "13904de41a56b878479c223739cdc3e5a1c1cc849cf2761cb38ba416a0ad439b",
+    "runner_executable_ast_unchanged": true,
+    "algorithm_modules_unchanged": true,
+    "numerical_result_files_unchanged": true,
+    "unit_tests_passed": 12,
+    "archive_verification": {
+      "status": "passed",
+      "source_digest": "13904de41a56b878479c223739cdc3e5a1c1cc849cf2761cb38ba416a0ad439b",
+      "figure_fixtures": 12,
+      "numeric_tables": 9,
+      "scope": "Archived-data reconstruction; full 300-repeat fits were not rerun"
+    },
+    "chinese_text_scan": "passed",
+    "local_markdown_links": "passed"
+  }
+}

@@ -1,0 +1,9 @@
+# Release verification environment: CPython 3.12.10, macOS arm64.
+# Recorded from installed distributions; a fresh installation was not tested.
+numpy==2.5.4
+scipy==1.18.1
+pandas==3.1.0
+matplotlib==3.11.2
+Jinja2==3.1.6
+psutil==7.2.2
+threadpoolctl==3.7.0

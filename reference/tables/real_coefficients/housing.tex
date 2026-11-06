@@ -1,0 +1,20 @@
+\begingroup
+
+\begin{table}[!tb]\centering\begingroup\footnotesize
+\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.12}
+\caption{Housing median-regression coefficients at $n_{\mathrm{train}}=16000$ and $\epsilon=0.9$ for private fits.}
+\label{tab:real-housing-coefficients}
+\journaltablestyle
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr0.19000000\linewidth-1.75\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr0.1157142857\linewidth-1.75\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr0.1157142857\linewidth-1.75\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr0.1157142857\linewidth-1.75\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr0.1157142857\linewidth-1.75\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr0.1157142857\linewidth-1.75\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr0.1157142857\linewidth-1.75\tabcolsep\relax}>{\raggedleft\arraybackslash}p{\dimexpr0.1157142857\linewidth-1.75\tabcolsep\relax}@{}}
+\toprule
+Predictor & \shortstack{DP-SQR\\GD} & \shortstack{Non-DP\\SQR-GD} & \shortstack{Tran\\SGD} & \shortstack{Tran\\OPM} & \shortstack{\scriptsize DP-Huber\\GD} & LAD & OLS\\\midrule
+Intercept & 10.77798 & 10.77677 & 10.64544 & 10.61662 & 10.84287 & 10.79283 & 10.91965\\
+Median income & 0.23827 & 0.23867 & 0.27993 & 0.28127 & 0.22278 & 0.24241 & 0.22039\\
+Median housing age & 0.00993 & 0.00994 & 0.00901 & 0.00948 & 0.00976 & 0.00919 & 0.00777\\
+Population & -0.00014 & -0.00014 & -0.00023 & -0.00023 & -0.00006 & -0.00018 & -0.00017\\
+Households & 0.00090 & 0.00091 & 0.00161 & 0.00166 & 0.00034 & 0.00127 & 0.00111\\
+Total rooms & -0.00005 & -0.00005 & -0.00013 & -0.00014 & 0.00001 & -0.00011 & -0.00009\\
+\bottomrule\end{tabular}
+\par\smallskip\begin{minipage}{\linewidth}\footnotesize\raggedright Entries are mean coefficients across training splits, in the recorded predictor units and log house-value units.\end{minipage}\endgroup\end{table}
+
+\endgroup

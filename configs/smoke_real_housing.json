@@ -1,0 +1,32 @@
+{
+  "version": "20261101-fixed-rules-v1",
+  "seed": 2026110101,
+  "repeats": 2,
+  "test_n": 5000,
+  "epsilon": [
+    0.3,
+    0.5,
+    0.9
+  ],
+  "tau": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "delta_rule": "10*n**(-1.1)",
+  "initializer_projection": null,
+  "hyperparameter_search": false,
+  "study": "real",
+  "regime": "housing",
+  "sample_sizes": [
+    60,
+    80
+  ],
+  "working_sparsity": null,
+  "train_fraction": 0.8,
+  "preprocessing": "training_only_public_benchmark",
+  "coefficient_sample_size": 80,
+  "coefficient_epsilon": 0.9,
+  "coefficient_tau": 0.5,
+  "diagnostic_only": true
+}

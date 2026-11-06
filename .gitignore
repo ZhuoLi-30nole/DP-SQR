@@ -1,0 +1,22 @@
+# Local environments and editor files
+.venv/
+venv/
+.runtime/
+.idea/
+.vscode/
+.DS_Store
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+*.o
+*.log
+
+# Regenerated runs, checkpoints, and plots
+results/
+outputs/
+validation/
+paper_outputs/
+paper_outputs_v2/
+
+# Keep paper_results/ and reference/: these are versioned reproduction inputs.

@@ -1,12 +1,10 @@
-# DP-SQR reproduction quick start
+# Reproduction quick start
 
-This release accompanies **Differentially Private Smoothed Quantile Regression in Low and High Dimensions**, by Zhuo Li and Xiaochao Xia, and is synchronized with the final main-text and supplement on 7 November 2026. The original numerical archive remains the 6 November release.
-
-It is a separate GitHub release directory. The original experiment project is unchanged. The release includes the numerical algorithms, nine formal experiment configurations, four small diagnostic configurations, public benchmark inputs, and approximately 17 MB of compressed individual-fit measurements. Historical pilots, duplicate outputs, checkpoints, local environments, and superseded plotting entry points are excluded.
+This repository accompanies **Differentially Private Smoothed Quantile Regression in Low and High Dimensions**, by Zhuo Li and Xiaochao Xia.
 
 ## Install
 
-Python 3.12 is recommended. A C++17 compiler must be available as `c++`; DP-SGD and FRAPPE compile their numerical kernels automatically. CVXPY is not required.
+Use Python 3.12 and a C++17 compiler available as `c++`:
 
 ```bash
 python -m venv .venv
@@ -15,17 +13,17 @@ python -m pip install -r requirements.txt
 python run.py check --tests
 ```
 
-`requirements-locked.txt` records the packages actually installed in the release verification environment. A fresh installation was not tested. Numerical reruns can differ across platforms, BLAS implementations, and dependency versions.
+DP-SGD and FRAPPE compile their numerical kernels automatically. CVXPY is not required. `requirements-locked.txt` records the verification environment; a fresh dependency installation has not been tested.
 
-## Reconstruct figures and tables from archived fits
+## Reconstruct the paper's figures and tables
 
 ```bash
 python reproduce.py --mode archived
 ```
 
-This reads `paper_results/` without refitting and writes to `outputs/figures/` and `outputs/tables/`. It covers all 12 external experimental figures, nine numeric result tables, and the application-design table used in the main text and supplement. The smoothing schematic is authored in LaTeX/TikZ and is not an experiment output.
+This uses the committed `paper_results/` measurements without refitting. Outputs appear in `outputs/figures/` and `outputs/tables/`: 12 experimental figures, nine numeric result tables, and the application-design table. The smoothing schematic is part of the manuscript's LaTeX/TikZ source.
 
-In the verification environment, all 12 regenerated PNGs matched the original final-output PNGs pixel for pixel. The nine numeric tables were recalculated from individual-fit measurements and checked at the precision displayed in the manuscript. Generated LaTeX tables use a simple layout; the final manuscript layouts are preserved separately in `reference/tables/`.
+Numeric tables are checked at the precision displayed in the manuscript. Generated table layouts are simple; manuscript layouts are provided in `reference/tables/`. The [manuscript-to-code map](REPRODUCIBILITY.md) lists the corresponding figures, tables, and configurations.
 
 ## Rerun all model fits
 
@@ -33,29 +31,21 @@ In the verification environment, all 12 regenerated PNGs matched the original fi
 python reproduce.py --mode full --workers 1
 ```
 
-This runs the nine formal configurations, totaling 750,000 method fits in the original grids, and seven screening scenarios with 300 repetitions and five methods, totaling another 10,500 fits. It then rebuilds the final figures and tables. This is a substantial computation; the full 300-repetition study was not rerun during release preparation.
+This executes nine formal configurations (750,000 method fits) and seven screening scenarios (10,500 fits), all with 300 repetitions, then generates the figures and tables. It requires substantial computation. The complete study has not been rerun as part of repository verification; archived reconstruction and small fitting runs have been checked. Cross-platform numerical results may differ.
 
-The numerical implementation and formal configurations are retained. The numerical update and noise formulas are unchanged. This release updates publication labels and rejects invalid forced-coordinate inputs; see RELEASE_UPDATE_20261108.md. The release runner differs only in its introductory docstring, which now refers to the English README; both the historical and release source digests are recorded.
+The low-dimensional grids include combinations beyond the manuscript's displayed subsets. Figure and table scripts select the required subsets. FRAPPE comparisons are retained in the supplement. The screening study uses `n_test=5000` and 300 repetitions.
 
-The original low-dimensional grids include combinations not displayed in the manuscript. They are retained to preserve the original experimental specification. The figures and tables use their documented subsets.
-
-See the [main README](../README.md) and [manuscript-to-code mapping](REPRODUCIBILITY.md) for individual-group commands and checkpoint/resume behavior. To execute small diagnostic fits:
+For a quick workflow check:
 
 ```bash
 python run_smoke.py
 python scripts/screening_stress.py --n 60 --p 20 --test-n 80 --repeats 1 --workers 1 --output results/screening_smoke
 ```
 
-## Archived measurements
+Repeat an identical fitting command at the same output path to resume from checkpoints. Use a new directory when source code, configurations, or data change. Keep new results separate from `paper_results/`. Individual-group and export commands are in the [README](../README.md) and [reproduction details](REPRODUCIBILITY.md).
 
-`paper_results/` retains individual metrics, fit identifiers, repetition indices, seeds, and required coefficients. Readers can inspect the numerical results and reconstruct figures without completing all model fits first. Compression preserves the original numeric strings while removing repeated JSON parameter, privacy-ledger, and runtime-metadata columns.
+## Data and interpretation
 
-The archived results support the default reconstruction command. They can be distributed with the repository or separately as a release asset, provided readers can obtain them at the documented paths. Checkpoints, historical outputs, `.venv/`, `.idea/`, caches, and logs do not need to be distributed. `results/` and `outputs/` are ignored by Git; `paper_results/` and `reference/` are retained.
+The archive contains individual metrics, fit identifiers, repetition indices, seeds, and required coefficients. Privacy budgets refer to a single fit on processed synthetic/public benchmark inputs; the entire benchmarking workflow is not a single private release of confidential raw records.
 
-FRAPPE is omitted from some main-text figures but remains in the supplemental comparisons, so its implementation and measurements are included. The final screening study uses `n_test=5000` with 300 repetitions; the historical `n_test=2000` version is excluded.
-
-## Scope and attribution
-
-Privacy budgets refer to one fit on the specified processed inputs in synthetic/public-data benchmarks. Ordinary standardization and the joint publication of multiple splits, methods, and budgets are not a single private release of raw confidential records. Numerical and method-specific qualifications remain in the code and [experiment specifications](EXPERIMENT_PROTOCOL.md).
-
-See [data details](DATA.md), [third-party notices](../THIRD_PARTY_NOTICES.md), and `licenses/` for sources and existing license material. The release does not assign a new blanket license to all code, data, and manuscript content. File selection and validation scope are documented in the [release audit](RELEASE_AUDIT.md).
+See [data details](DATA.md), [experiment specifications](EXPERIMENT_PROTOCOL.md), [source attribution](../THIRD_PARTY_NOTICES.md), and [validation scope](RELEASE_AUDIT.md).

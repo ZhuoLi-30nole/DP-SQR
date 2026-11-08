@@ -1,6 +1,6 @@
 {
   "release_date": "2026-11-08",
-  "purpose": "Final-manuscript synchronization and public-index input validation update",
+  "purpose": "Reproduction code, data, and archived measurements for the accompanying paper",
   "original_source_digest": "2932e7942f69ef8ef7c4296a9aeeeba80e7c5d2f69150d5e89c3210534c59afc",
   "release_source_digest": "369cba5205fffd9aa777f07d554644e8746ad707eb7a1eb4e35fff44734d8f34",
   "files": [
@@ -11,13 +11,13 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 8209,
-      "sha256": "4b76f924603eef052e0aafced57a905ce8cc219dfd0cd2f7a5c12679df466d25"
+      "size_bytes": 5592,
+      "sha256": "2376dbbb8295be73603ca518300f26b70b863ec387b01eb3356526af37d7c690"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "size_bytes": 2224,
-      "sha256": "dd8ed0a86753c763e90c5fb47d38b1cc1fd5d6ece978c1a80dfd98f2e724d3cd"
+      "size_bytes": 2049,
+      "sha256": "bcee2fbf428856795f1fc3158771da65974fc63b9d7ec8642926e60afb1388e7"
     },
     {
       "path": "configs/real_crime.json",
@@ -101,8 +101,8 @@
     },
     {
       "path": "docs/DATA.md",
-      "size_bytes": 1763,
-      "sha256": "8704c2f8d3ac8c8d7444d714ff5d0815d4125e05c0a513e25e44e9008e1e613a"
+      "size_bytes": 1720,
+      "sha256": "1e642c3556f65f9f4eae7b6765e627cee5fec38e552023a39e0d5347138ef6d7"
     },
     {
       "path": "docs/EXPERIMENT_PROTOCOL.md",
@@ -111,28 +111,23 @@
     },
     {
       "path": "docs/QUICKSTART.md",
-      "size_bytes": 5256,
-      "sha256": "75e4007b03a64af43c4b222519f10954ef4ca36ec6540691ed0846f8bd62c2cb"
+      "size_bytes": 2975,
+      "sha256": "932b9628ce1670286fe65e835d8b2a216e1f003fa02d25d57e11844af277c80b"
     },
     {
       "path": "docs/RELEASE_AUDIT.md",
-      "size_bytes": 5693,
-      "sha256": "1d221589a6934c4cbe4a194e4a49b4ef36db41edf80083526ca389c1c1c06ab6"
-    },
-    {
-      "path": "docs/RELEASE_UPDATE_20261108.md",
-      "size_bytes": 2526,
-      "sha256": "5221aa6d947f62a2254b9265b60b90147c5d169ed95788ccdc8f1ae8df85e9b5"
+      "size_bytes": 1987,
+      "sha256": "b84e0000a15972c29e5e2258ed2c81d190d094701d8473ef890be5b2e56d03ce"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
-      "size_bytes": 7005,
-      "sha256": "c0f26ac6309341084b39ecbcf99a0272bae7c070469c503f1566bf26d95276da"
+      "size_bytes": 6215,
+      "sha256": "3a3f7a3440241e2c31492dbc07d8cf0f28605085f59f316d0d0ecea0a29f0b2c"
     },
     {
       "path": "docs/screening_stress.md",
-      "size_bytes": 3913,
-      "sha256": "49007ed51729624b4c3c97ceb4ef7d6684e2b29c89a7933c6ce041fd29dfcbc7"
+      "size_bytes": 3866,
+      "sha256": "19bfbc589f1f23fe8a603f51c9f1e44f17cce22a0796af8a8ccdfd0d533d3183"
     },
     {
       "path": "docs/validation.json",
@@ -545,7 +540,5 @@
       "sha256": "d97f240ff259d3dc751898112639750b9f692e18d0322c8361e22f369932f549"
     }
   ],
-  "total_bytes_without_manifest": 24592004,
-  "previous_release_date": "2026-11-06",
-  "previous_release_source_digest": "13904de41a56b878479c223739cdc3e5a1c1cc849cf2761cb38ba416a0ad439b"
+  "total_bytes_without_manifest": 24595083
 }

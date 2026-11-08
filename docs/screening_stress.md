@@ -17,9 +17,9 @@ python scripts/screening_stress.py \
   --output results/screening_stress_t3_r300_test5000
 ```
 
-Seven scenarios, 300 repetitions, and five methods produce 10,500 complete fits. Four independent processes run in parallel, with one BLAS thread per process. Training, test, and algorithm seeds follow the original deterministic rules.
+Seven scenarios, 300 repetitions, and five methods produce 10,500 complete fits. Four independent processes run in parallel, with one BLAS thread per process. Training, test, and algorithm seeds follow fixed deterministic rules.
 
-The manuscript uses the final `n_test=5000` study with 300 repetitions. Its archived measurements are in `paper_results/screening_stress.csv.gz`. Historical runs with `n_test=2000` are excluded. Use a separate output directory for a new study; the script rejects checkpoint reuse when `test_n` differs.
+The manuscript uses the final `n_test=5000` study with 300 repetitions. Its archived measurements are in `paper_results/screening_stress.csv.gz`. Use a separate output directory for a new study; the script rejects checkpoint reuse when `test_n` differs.
 
 To resume after interruption, run the same command again. The worker count can change while the script and experimental settings remain identical. Only one process group should write to a given output directory at a time.
 
@@ -44,8 +44,8 @@ The comparison metric is slope Recall, excluding the intercept. `summary.txt` re
 | `cancellation`, rho=0.8/0.95 | Only the first two slopes are correlated; coefficients (1,-1), with other active coefficients (1,-1,1) | Progressively weaken the first pair's marginal signals |
 | `suppressor`, rho=0.8/0.95 | Same correlated pair; coefficients (1,-rho), with other active coefficients (1,-1,1) | Give the second variable a nonzero conditional effect but marginal independence from the response |
 
-The intercept coefficient is one. Signal variances are not normalized across scenarios. SQR-IHT and Huber-IHT retain the original screening-based initialization and iteration rules. Gaussian errors can be selected with `--noise gaussian`, and `--methods` can restrict the method set.
+The intercept coefficient is one. Signal variances are not normalized across scenarios. SQR-IHT and Huber-IHT use screening-based initialization. Gaussian errors can be selected with `--noise gaussian`, and `--methods` can restrict the method set.
 
 With no arguments, the script runs a five-repetition pilot in `results/screening_stress_t3_test5000_pilot`.
 
-These are synthetic-data experiments. Privacy accounting and numerical qualifications follow the original project. Seeds, unperturbed utilities, and test losses are simulation diagnostics.
+These are synthetic-data experiments. Privacy accounting and numerical qualifications are described in [the experiment specifications](EXPERIMENT_PROTOCOL.md). Seeds, unperturbed utilities, and test losses are simulation diagnostics.

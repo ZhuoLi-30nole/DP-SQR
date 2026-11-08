@@ -1,4 +1,4 @@
-"""Tran et al. replication baselines; upstream bugs/deviations are explicit.
+"""Adapted DP-SGD and OPM comparators using the Tran implementation source.
 
 The public repository implements Chen & Chua convolution-smoothed SGD/OPM.
 These ports do NOT assert a verified end-to-end DP guarantee. See audit notes.
@@ -273,5 +273,5 @@ def tran_opm(X,y, *, tau=.5,h=.5,epsilon=1.,Cx=1.,kernel='logistic',
          'strong_convexity_modulus':ridge,
          'optimization_gap_upper_bound':gap_upper,
          'kernel':kernel,'initialization':'explicit beta0 or legacy zero',
-         'paper_fidelity':'source-corrected; paper pending',
+         'paper_fidelity':'radial objective-perturbation variant; see docs/EXPERIMENT_PROTOCOL.md',
          'finite_precision_privacy_argument':'incomplete'})

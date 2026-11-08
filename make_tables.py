@@ -10,6 +10,7 @@ from pathlib import Path
 from run import ROOT
 import numpy as np
 import pandas as pd
+from dpsqr.display_names import publication_frame
 
 LOW = ['sqr_gd', 'sqr_gd_np', 'tran_dpsgd', 'tran_opm', 'huber_gd']
 HIGH = ['sqr_sr', 'sqr_sr_np', 'sqr_iht', 'sqr_iht_np', 'huber_iht', 'cai_iht']
@@ -48,7 +49,7 @@ def mean_se(values):
 
 def publish(frame, output, name):
     frame.to_csv(output / f'{name}.csv', index=False)
-    frame.to_latex(output / f'{name}.tex', index=False, escape=True)
+    publication_frame(frame).to_latex(output / f'{name}.tex', index=False, escape=True)
 
 
 def build(source, output):

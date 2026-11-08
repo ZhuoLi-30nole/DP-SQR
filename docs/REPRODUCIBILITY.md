@@ -1,6 +1,6 @@
 # Manuscript-to-code mapping
 
-Snapshot: 6 November 2026. The authoritative original experiment source digest is recorded in `paper_results/manifest.json`. All `src/**/*.py` files and the screening runner are retained byte for byte. Only the introductory docstring in `run.py` was updated to reference the English README; its executable code is unchanged. Historical and release source digests are recorded separately. The release plotting entry point consolidates the final plotting implementation and names outputs as in the manuscript.
+Manuscript synchronization: 7 November 2026. Original experiment archive: 6 November 2026. The authoritative original experiment source digest is recorded in `paper_results/manifest.json`. The numerical experiment archive and screening runner are retained byte for byte. Publication labels, documentation, and forced-index validation were updated in the current source; see RELEASE_UPDATE_20261108.md. During the original 6 November packaging, only the introductory docstring in `run.py` was updated to reference the English README; its executable code remains unchanged. Historical and release source digests are recorded separately. The release plotting entry point consolidates the final plotting implementation and names outputs as in the manuscript.
 
 ## Experiment coverage
 

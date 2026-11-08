@@ -3,6 +3,30 @@ import numpy as np
 from .core import data_xy, quantile, integer, positive
 
 
+def validate_forced_indices(forced, p):
+    """Validate public column indices before conversion, preserving their order."""
+    raw = np.asarray(forced, dtype=object)
+    if raw.ndim != 1:
+        raise ValueError("forced must be a one-dimensional sequence of integer indices")
+    converted = []
+    for value in raw:
+        if isinstance(value, (bool, np.bool_)):
+            raise ValueError("forced indices must be integers, not booleans")
+        try:
+            index = int(value)
+            if index != value:
+                raise ValueError("forced indices must be integers")
+        except (TypeError, ValueError, OverflowError) as exc:
+            raise ValueError("forced indices must be finite integers") from exc
+        if not 0 <= index < p:
+            raise ValueError("forced must contain unique valid column indices")
+        converted.append(index)
+    indices = np.asarray(converted, dtype=int)
+    if len(np.unique(indices)) != len(indices) or np.any((indices < 0) | (indices >= p)):
+        raise ValueError("forced must contain unique valid column indices")
+    return indices
+
+
 def cqs_utilities(X, y, tau):
     """O(np log n), strict predictor inequality and public row-position tie break.
 

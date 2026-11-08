@@ -438,98 +438,121 @@
       "document": "main",
       "paper_file": "fig2_no_frappe.pdf",
       "generated_file": "without_frappe/sim_low_overview.pdf",
-      "paper_sha256": "0f346886e26d703f1409f89fc2daf02275c9c21ca9a7af16d557169d997aa529",
-      "release_generated_file": "fig2_no_frappe.pdf"
+      "paper_sha256": "2ac689273bf568422626f88eb64711bbd6ef9ce83eb78b27ccacf9ffcf7438ed",
+      "release_generated_file": "fig2_no_frappe.pdf",
+      "previous_paper_sha256": "0f346886e26d703f1409f89fc2daf02275c9c21ca9a7af16d557169d997aa529"
     },
     {
       "document": "main",
       "paper_file": "fig3_no_frappe.pdf",
       "generated_file": "without_frappe/figure3_quantiles.pdf",
-      "paper_sha256": "69ae90ce5eec36fecef941f77c51c05be34f848da1194378dd99bc05512a62d2",
-      "release_generated_file": "fig3_no_frappe.pdf"
+      "paper_sha256": "23395d240872b4de024ecd0c20158de63b40875249289f74c371344ad4c90b98",
+      "release_generated_file": "fig3_no_frappe.pdf",
+      "previous_paper_sha256": "69ae90ce5eec36fecef941f77c51c05be34f848da1194378dd99bc05512a62d2"
     },
     {
       "document": "main",
       "paper_file": "sim_high_core.pdf",
       "generated_file": "sim_high_core.pdf",
-      "paper_sha256": "ba35a3541030cd8792bd4a39221f2f440dcdc985984460516bc75ad6e3293899",
-      "release_generated_file": "sim_high_core.pdf"
+      "paper_sha256": "93b06cec0574ba01035a9ebd9b13fec8e28eb6efa38d4b3d5575404c59967463",
+      "release_generated_file": "sim_high_core.pdf",
+      "previous_paper_sha256": "ba35a3541030cd8792bd4a39221f2f440dcdc985984460516bc75ad6e3293899"
     },
     {
       "document": "main",
       "paper_file": "figure5_robustness_eps1.pdf",
       "generated_file": "figure5_robustness_eps1.pdf",
-      "paper_sha256": "06f8f6b805475ca52f4ff27978155d6c3c46bcd8b690a1774d5692028e21194a",
-      "release_generated_file": "figure5_robustness_eps1.pdf"
+      "paper_sha256": "84724497e784adb0f9409edb5b205e9b6b98cd07ff85d986134b0d8eb9d42fbf",
+      "release_generated_file": "figure5_robustness_eps1.pdf",
+      "previous_paper_sha256": "06f8f6b805475ca52f4ff27978155d6c3c46bcd8b690a1774d5692028e21194a"
     },
     {
       "document": "main",
       "paper_file": "figure6_housing_no_frappe.pdf",
       "generated_file": "figure6_housing_no_frappe.pdf",
-      "paper_sha256": "74ddf815aeb0c28a52d94871c53818d68ca2aa2eb624018868c5ced7a1c90d92",
-      "release_generated_file": "figure6_housing_no_frappe.pdf"
+      "paper_sha256": "b39c5c75d218fdb8e4c892937d9aaf21d86ccb9186fdce1000316c937ee3cae0",
+      "release_generated_file": "figure6_housing_no_frappe.pdf",
+      "previous_paper_sha256": "74ddf815aeb0c28a52d94871c53818d68ca2aa2eb624018868c5ced7a1c90d92"
     },
     {
       "document": "main",
       "paper_file": "figure7_community_log.pdf",
       "generated_file": "figure7_community_log.pdf",
-      "paper_sha256": "10aaf1c15373048d3b5920a10211c19014e7b2c0705cfbfe6e83bdfe27b6b064",
-      "release_generated_file": "figure7_community_log.pdf"
+      "paper_sha256": "24f10aa5b488b1b41ceaa3ad463cc59e4336020bc2e8521224b139a7f0d3710e",
+      "release_generated_file": "figure7_community_log.pdf",
+      "previous_paper_sha256": "10aaf1c15373048d3b5920a10211c19014e7b2c0705cfbfe6e83bdfe27b6b064"
     },
     {
       "document": "supp",
       "paper_file": "fig2_with_frappe.pdf",
       "generated_file": "full/sim_low_overview.pdf",
-      "paper_sha256": "386f158a0a23e57a2ca86a594e58a87aeb44004f730b05c600fe8c8ba2a63352",
-      "release_generated_file": "fig2_with_frappe.pdf"
+      "paper_sha256": "b5bf75bbe7b33d27fcda0620067a8d42e34f5795a5e972be5abebe384223f2e1",
+      "release_generated_file": "fig2_with_frappe.pdf",
+      "previous_paper_sha256": "386f158a0a23e57a2ca86a594e58a87aeb44004f730b05c600fe8c8ba2a63352"
     },
     {
       "document": "supp",
       "paper_file": "fig3_with_frappe.pdf",
       "generated_file": "full/figure3_quantiles.pdf",
-      "paper_sha256": "bfea51f5b7440d40a19fad6d4887b05f3b16366e2802e8b119fea1a19935b643",
-      "release_generated_file": "fig3_with_frappe.pdf"
+      "paper_sha256": "447326162ab7e2c30f810772b03a678b4b2409caa7e4529388843fac360cebfd",
+      "release_generated_file": "fig3_with_frappe.pdf",
+      "previous_paper_sha256": "bfea51f5b7440d40a19fad6d4887b05f3b16366e2802e8b119fea1a19935b643"
     },
     {
       "document": "supp",
       "paper_file": "sim_low_dimensions.pdf",
       "generated_file": "sim_low_dimensions.pdf",
-      "paper_sha256": "58a589df5a977bc32a9c213d037b6e62dca07d95ac9796c08a167f307f69610b",
-      "release_generated_file": "sim_low_dimensions.pdf"
+      "paper_sha256": "a84791f6a8f59d431b8479d1ba7b5f8c98b71a1fe6cf16b0d5b5e47868639c5e",
+      "release_generated_file": "sim_low_dimensions.pdf",
+      "previous_paper_sha256": "58a589df5a977bc32a9c213d037b6e62dca07d95ac9796c08a167f307f69610b"
     },
     {
       "document": "supp",
       "paper_file": "figure5_robustness_eps0.75.pdf",
       "generated_file": "figure5_robustness_eps0.75.pdf",
-      "paper_sha256": "3de516b6099a903111f83fe028d2c788330b4823c6b2cc7fa5f65e2e8d54d32b",
-      "release_generated_file": "figure5_robustness_eps0.75.pdf"
+      "paper_sha256": "7dfbd21174132884762a037cfa714c22810a066227e8fa7a9f5435fa193d4e7e",
+      "release_generated_file": "figure5_robustness_eps0.75.pdf",
+      "previous_paper_sha256": "3de516b6099a903111f83fe028d2c788330b4823c6b2cc7fa5f65e2e8d54d32b"
     },
     {
       "document": "supp",
       "paper_file": "sim_high_support_size.pdf",
       "generated_file": "sim_high_support_size.pdf",
-      "paper_sha256": "8ce5a547977d919bbf45e204747e82f4c62b3709c143673478171428baf978ec",
-      "release_generated_file": "sim_high_support_size.pdf"
+      "paper_sha256": "37e52b516b266a2e8e570be000ca18d5ac649795797597666988d92ec21d8d27",
+      "release_generated_file": "sim_high_support_size.pdf",
+      "previous_paper_sha256": "8ce5a547977d919bbf45e204747e82f4c62b3709c143673478171428baf978ec"
     },
     {
       "document": "supp",
       "paper_file": "figure6_housing.pdf",
       "generated_file": "figure6_housing.pdf",
-      "paper_sha256": "b1a1d4dc87ae36d747ba2f88df04a658b3e51ccff2edfd7a1eb9457545d328f2",
-      "release_generated_file": "figure6_housing.pdf"
+      "paper_sha256": "5113481c28d7823732b30b0971e74b7d81a8aaa9db4eeb7567efcd29389c491a",
+      "release_generated_file": "figure6_housing.pdf",
+      "previous_paper_sha256": "b1a1d4dc87ae36d747ba2f88df04a658b3e51ccff2edfd7a1eb9457545d328f2"
     }
   ],
   "manuscript_sha256": {
-    "main": "e04971198172cfbd0db5cc12344147855b3f153d00c37988f2f700f28a899df9",
-    "supp": "41b59c4a75c8cf27b9363bbdee1a98bc2b8b30d5b4fa8ec0888b1fa18e82f4a9"
+    "main": "8874fbf89b4639b74548af7fdbf4d5fca9b1459ee2a0c3271cadaa5be261e578",
+    "supp": "93488cab73a3a56410c4d8f0d4a36b0101d3bd13fbe56c152f34816851b7a91f"
   },
   "scope": "Archived numerical results; projected columns retain original numeric strings. No rerun was used to construct this archive.",
-  "release_source_digest": "13904de41a56b878479c223739cdc3e5a1c1cc849cf2761cb38ba416a0ad439b",
+  "release_source_digest": "369cba5205fffd9aa777f07d554644e8746ad707eb7a1eb4e35fff44734d8f34",
   "runner_docstring_revision": {
     "file": "run.py",
     "original_sha256": "5ddffbe263ff7293eae20607a3fb9acd2711e00e57cbdce49a8b50839cbb9ffe",
     "release_sha256": "0c15d0dee8c8e9d83bebb7af63dcc6909cb0c39b572a8e1b95372eb9160aeae6",
     "change": "Introductory docstring now refers to README.md; executable AST unchanged.",
     "executable_ast_unchanged": true
+  },
+  "prior_release_source_digest": "13904de41a56b878479c223739cdc3e5a1c1cc849cf2761cb38ba416a0ad439b",
+  "original_manuscript_sha256": {
+    "main": "e04971198172cfbd0db5cc12344147855b3f153d00c37988f2f700f28a899df9",
+    "supp": "41b59c4a75c8cf27b9363bbdee1a98bc2b8b30d5b4fa8ec0888b1fa18e82f4a9"
+  },
+  "release_update": {
+    "date": "2026-11-08",
+    "manuscript_snapshot": "2026-11-07 final_clean",
+    "base_commit": "fc9a5620a95a12c8b295ea5f2501c14e65b75061",
+    "scope": "Publication labels, forced-index validation, documentation and final reference fixtures; archived measurements and formal configurations unchanged."
   }
 }

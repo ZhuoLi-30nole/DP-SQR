@@ -290,7 +290,8 @@ def summarize(rows,out):
         tab.to_csv(out/'coefficients_summary.csv',index=False)
         wide=tab.assign(estimate=tab.apply(lambda r:f"{r['mean']:.4f} ({r['std']:.4f})",axis=1)).pivot(index='method',columns='feature',values='estimate')
         wide=wide.reindex(columns=['Intercept',*[x for x in wide.columns if x!='Intercept']])
-        wide.to_latex(out/'coefficients_table.tex',escape=True,caption='Median coefficients: mean (SD), epsilon=0.9 for DP methods.')
+        from .display_names import publication_frame
+        publication_frame(wide).to_latex(out/'coefficients_table.tex',escape=True,caption='Median coefficients: mean (SD), epsilon=0.9 for DP methods.')
     return frame
 
 

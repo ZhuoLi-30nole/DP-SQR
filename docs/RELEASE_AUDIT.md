@@ -1,5 +1,7 @@
 # GitHub release audit
 
+Current synchronization: 8 November 2026. The dated records below document the original 6 November release. See [the update record](RELEASE_UPDATE_20261108.md) for the current changes and validation.
+
 Prepared on 6 November 2026. The experiment-to-manuscript mapping follows the final `main.tex`, `supp.tex`, and their referenced figures and tables. Preparing this separate release did not modify the original LaTeX or experiment project.
 
 ## Included material

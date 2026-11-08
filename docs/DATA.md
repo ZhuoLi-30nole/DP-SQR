@@ -1,6 +1,6 @@
 # Benchmark inputs
 
-The public benchmark files were supplied with the original experiment project and are retained unchanged.
+The repository includes the following public benchmark inputs.
 
 | File | Use |
 | --- | --- |

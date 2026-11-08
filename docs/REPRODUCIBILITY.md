@@ -1,13 +1,13 @@
 # Manuscript-to-code mapping
 
-Manuscript synchronization: 7 November 2026. Original experiment archive: 6 November 2026. The authoritative original experiment source digest is recorded in `paper_results/manifest.json`. The numerical experiment archive and screening runner are retained byte for byte. Publication labels, documentation, and forced-index validation were updated in the current source; see RELEASE_UPDATE_20261108.md. During the original 6 November packaging, only the introductory docstring in `run.py` was updated to reference the English README; its executable code remains unchanged. Historical and release source digests are recorded separately. The release plotting entry point consolidates the final plotting implementation and names outputs as in the manuscript.
+This guide maps the paper’s experiments to configurations, archived measurements, and generated outputs. Run commands from the repository root.
 
 ## Experiment coverage
 
 | Formal configuration | Design | Used in |
 | --- | --- | --- |
 | `sim_low_p10` | Dense p=10; n=250/500/750/1000; Gaussian/t3/Cauchy; three quantiles; five budgets | Main low-dimensional plots and excess-loss table; supplemental FRAPPE comparisons |
-| `sim_low_p5`, `sim_low_p20` | Original complete p=5/20 grids; displayed subset is median, epsilon=.5 | Supplemental dimension comparison |
+| `sim_low_p5`, `sim_low_p20` | Complete p=5/20 grids; displayed subset is median, epsilon=.5 | Supplemental dimension comparison |
 | `sim_high_core` | p=12000; five active slopes; Gaussian median; n=5000/7500/10000; epsilon=.5/.75/1 | Main high-dimensional core; supplemental coverage and excess loss |
 | `sim_high_gaussian_quantiles` | Gaussian nonmedian quantiles at n=10000 | Robustness panels, with median rows reused from core |
 | `sim_high_tails` | t2.25/Cauchy; three quantiles; epsilon=.75/1 | Main and supplemental robustness panels |
@@ -16,7 +16,7 @@ Manuscript synchronization: 7 November 2026. Original experiment archive: 6 Nove
 | `real_crime` | 300 paired splits; training n=400/640/880/1200/1520; three quantiles/budgets | Community prediction and paired comparisons |
 | `scripts/screening_stress.py` | Seven dependence/signal scenarios; n=5000; p=6000; t3; test n=5000; tau=.5; epsilon=1 | Main and supplemental screening tables; marginal-rank diagnostics |
 
-The screening runner's `diagnostic_only` field describes its synthetic stress-study scope. The archived final study has 300 repetitions per scenario/method; it is not the five-repeat default pilot. Its exact configuration is in `paper_results/provenance/screening_stress.json`.
+The screening runner's `diagnostic_only` field describes its synthetic stress-study scope. The manuscript study has 300 repetitions per scenario/method. Its exact configuration is in `paper_results/provenance/screening_stress.json`.
 
 ## Final figure files
 
@@ -39,7 +39,7 @@ The screening runner's `diagnostic_only` field describes its synthetic stress-st
 
 Compact files are `paper_results/plot_sources/<name>_source.csv.gz`. They can overlap because a fit can appear in several figures. Within each file `task_id` is unique. Do not concatenate overlapping figure files and count them as independent fits.
 
-The `generated_file` entries in the archive manifest identify the original project's v2 export paths, used to verify the final manuscript PDFs. `release_generated_file` gives the current output basename.
+`release_generated_file` in the archive manifest gives each generated figure’s output basename.
 
 ## Final tables
 
@@ -73,6 +73,6 @@ python make_figures.py --source outputs/recomputed_results/plot_sources --output
 python make_tables.py --source outputs/recomputed_results --output outputs/recomputed_tables
 ```
 
-The first command retains the original reporting/provenance checks and creates large intermediate CSVs; these can be kept locally and are ignored by Git. The compact export contains scalar per-fit measurements and coefficients rather than repeated solver metadata. It does not replace per-fit checkpoints for resuming fits.
+The first command checks reporting/provenance and creates large intermediate CSVs; these can be kept locally and are ignored by Git. The compact export contains scalar per-fit measurements and coefficients rather than repeated solver metadata. It does not replace per-fit checkpoints for resuming fits.
 
 `verify_release.py` verifies the shipped archive; it does not automatically assert equality of newly fitted results. Compare a new run's summaries with the archive, accounting for numerical environment differences. A source modification intentionally changes the digest and should use a new output directory.

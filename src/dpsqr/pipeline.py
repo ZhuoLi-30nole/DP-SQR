@@ -1,6 +1,8 @@
 """Consolidated-specification complete fits: private initialization plus remaining main budget.
 
-Research interface only; formal admission is controlled by assurance.py.
+Research interface with fixed public configuration and stage-budget checks.
+The private initializer is budgeted; its statistical localization is not
+established by the fixed-public-start estimation theorems.
 Low-level core routines are not complete end-to-end mechanisms on their own.
 """
 import numpy as np
@@ -8,7 +10,7 @@ from .core import FitResult, data_xy
 from .initialization import (initialize_sqr, initialize_huber, initialize_ridge_ls,
                              chang_screen)
 from .methods import sqr_gd, sqr_iht
-from .selection import supremum_rank_utilities, peeling
+from .selection import supremum_rank_utilities, peeling, validate_forced_indices
 from .privacy import rho_from_eps_delta
 from .step_policy import resolve_step
 from .policy import allocation, VERSION
@@ -124,7 +126,7 @@ def fit_pipeline(name, X, y, params, *, epsilon, delta, tau, seed):
     high = base in ('sqr_iht', 'huber_iht')
     if base == 'sqr_sr':
         size = options.pop('size')
-        forced = np.asarray(options.pop('forced', ()), dtype=int)
+        forced = validate_forced_indices(options.pop('forced', ()), p)
         if intercept is not None and intercept not in forced:
             forced = np.r_[forced, intercept]
         if len(set(forced)) != len(forced) or np.any((forced < 0) | (forced >= p)):
@@ -202,7 +204,7 @@ def fit_pipeline(name, X, y, params, *, epsilon, delta, tau, seed):
     else:
         from .baselines.tran import tran_dpsgd, tran_opm
         if not private:
-            raise ValueError('Tran nonprivate counterpart is not part of this adapter')
+            raise ValueError('DP-SGD/OPM nonprivate counterpart is not part of this adapter')
         if base == 'tran_dpsgd':
             options.setdefault('step_schedule', 'paper_constant')
             options.setdefault('parameter_radius', 10.)
@@ -227,7 +229,7 @@ def fit_pipeline(name, X, y, params, *, epsilon, delta, tau, seed):
                         initialization_support=support.tolist(),
                         formal_dp_ready=False,
                         admission_scope='configuration admission is assessed by experiment runner',
-                        method_variant=('Tran-OPM + public zero initialization; replacement calibration'
+                        method_variant=('OPM + public zero initialization; replacement calibration'
                                         if base=='tran_opm' else base+' + '+init.method),
                         parameter_sources='public configuration and postprocessing of budgeted DP scale',
                         working_sparsity=working_sparsity,

@@ -210,5 +210,33 @@
     },
     "chinese_text_scan": "passed",
     "local_markdown_links": "passed"
+  },
+  "release_update_20261108": {
+    "base_commit": "fc9a5620a95a12c8b295ea5f2501c14e65b75061",
+    "unit_tests": {
+      "count": 19,
+      "passed": 19
+    },
+    "valid_input_fit_comparison": {
+      "methods": 9,
+      "coefficients_support_and_privacy_identical": true
+    },
+    "full_experiments_rerun": false,
+    "archive_measurements_unchanged": true,
+    "archived_reconstruction": {
+      "passed": true,
+      "figures": 12,
+      "numeric_result_tables": 9,
+      "application_design_tables": 1,
+      "publication_labels": "passed"
+    },
+    "plot_data_and_geometry_comparison": {
+      "figures": 12,
+      "identical": true
+    },
+    "updater_checks": {
+      "count": 6,
+      "passed": 6
+    }
   }
 }

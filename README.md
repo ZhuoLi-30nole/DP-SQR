@@ -2,11 +2,11 @@
 
 Reproduction code for **Differentially Private Smoothed Quantile Regression in Low and High Dimensions**, by Zhuo Li and Xiaochao Xia.
 
-This release follows the final manuscript and supplement snapshot of **6 November 2026**. It contains the original numerical implementations, fixed experiment configurations, two public benchmark datasets, and compact individual-fit results. See [the quick start](docs/QUICKSTART.md) and [the manuscript-to-code map](docs/REPRODUCIBILITY.md).
+This release is synchronized with the final manuscript on **7 November 2026**. The numerical experiment archive originates from the 6 November release; this update preserves all archived measurements and formal configurations. It contains the original numerical implementations, fixed experiment configurations, two public benchmark datasets, and compact individual-fit results. See [the quick start](docs/QUICKSTART.md) and [the manuscript-to-code map](docs/REPRODUCIBILITY.md).
 
 ## Installation
 
-Use Python 3.12 and a C++17 compiler (`c++` on the command line). The Tran-SGD and FRAPPE implementations compile their numerical kernels automatically. CVXPY is not required.
+Use Python 3.12 and a C++17 compiler (`c++` on the command line). The DP-SGD and FRAPPE implementations compile their numerical kernels automatically. CVXPY is not required.
 
 ```bash
 python -m venv .venv
@@ -39,7 +39,7 @@ python reproduce.py --mode full --workers 1
 
 This runs the nine formal experiment configurations with 300 repetitions, then the seven screening-stress scenarios with 300 repetitions and five methods. It exports new measurements and generates the final figures and tables in `outputs/`.
 
-**This is a substantial computation.** The original formal configurations specify 750,000 method fits; screening adds 10,500 fits. Tran-SGD retains its original `n²−1` updates. The low-dimensional grids include settings beyond the subset displayed in the paper; they are retained to preserve the original experiment specification and fingerprints. No historical pilot results are substituted.
+**This is a substantial computation.** The original formal configurations specify 750,000 method fits; screening adds 10,500 fits. DP-SGD retains its original `n²−1` updates. The low-dimensional grids include settings beyond the subset displayed in the paper; they are retained to preserve the original experiment specification and fingerprints. No historical pilot results are substituted.
 
 Individual groups can be planned or run separately:
 
@@ -85,7 +85,7 @@ The datasets are California Housing (20,640 records, five selected predictors) a
 
 These are synthetic/public-data benchmarking experiments. Privacy accounting is for one fit on the specified processed inputs. Ordinary training-set standardization and the publication of multiple fits, splits, seeds, and diagnostic losses are not a single end-to-end private release of confidential raw records. Method-specific numerical qualifications remain in the source.
 
-## Verification performed for this release
+## Original verification (6 November 2026)
 
 - Twelve existing unit/protocol tests passed; both public datasets loaded successfully.
 - Four small experiment grids and a small screening-stress run were executed.
@@ -94,3 +94,11 @@ These are synthetic/public-data benchmarking experiments. Privacy accounting is 
 - The complete 300-repetition fits were **not rerun** during packaging. Reconstruction from archived results and execution of the full experiment code are distinct checks.
 
 See [the release audit](docs/RELEASE_AUDIT.md) for included/excluded material and validation scope.
+
+## Statistical scope
+
+The parameter-error theorems apply to fixed public starting vectors satisfying the stated initial-distance and regularity conditions. Finite-step entry also requires a public initial-error bound and the joint tuning, sample, noise, and iteration conditions. The experimental pipeline instead uses a separately budgeted private ridge-SQR initializer; its statistical localization is left for future work. SR gives sure screening under marginal utility separation and an error bound in the retained dimension, not unconditional exact support recovery. IHT has its own conditions and does not automatically resolve weak marginal signals.
+
+## Current update verification (8 November 2026)
+
+All 19 tests passed, including the 12 existing protocol tests and seven new index/label regression tests. Archived reconstruction passed the existing numerical/integrity checks and the added publication-label checks. Nine small valid-input comparisons retained identical coefficients, supports, and privacy ledgers. Plot-source values and axes/artist geometry were checked against the base release. No full experimental study was rerun. See [the update record](docs/RELEASE_UPDATE_20261108.md).

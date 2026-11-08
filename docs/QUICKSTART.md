@@ -1,12 +1,12 @@
 # DP-SQR reproduction quick start
 
-This release accompanies **Differentially Private Smoothed Quantile Regression in Low and High Dimensions**, by Zhuo Li and Xiaochao Xia, and follows the final main-text and supplement snapshot of 6 November 2026.
+This release accompanies **Differentially Private Smoothed Quantile Regression in Low and High Dimensions**, by Zhuo Li and Xiaochao Xia, and is synchronized with the final main-text and supplement on 7 November 2026. The original numerical archive remains the 6 November release.
 
 It is a separate GitHub release directory. The original experiment project is unchanged. The release includes the numerical algorithms, nine formal experiment configurations, four small diagnostic configurations, public benchmark inputs, and approximately 17 MB of compressed individual-fit measurements. Historical pilots, duplicate outputs, checkpoints, local environments, and superseded plotting entry points are excluded.
 
 ## Install
 
-Python 3.12 is recommended. A C++17 compiler must be available as `c++`; Tran-SGD and FRAPPE compile their numerical kernels automatically. CVXPY is not required.
+Python 3.12 is recommended. A C++17 compiler must be available as `c++`; DP-SGD and FRAPPE compile their numerical kernels automatically. CVXPY is not required.
 
 ```bash
 python -m venv .venv
@@ -35,7 +35,7 @@ python reproduce.py --mode full --workers 1
 
 This runs the nine formal configurations, totaling 750,000 method fits in the original grids, and seven screening scenarios with 300 repetitions and five methods, totaling another 10,500 fits. It then rebuilds the final figures and tables. This is a substantial computation; the full 300-repetition study was not rerun during release preparation.
 
-The numerical implementation and formal configurations are retained. All algorithm modules are unchanged. The release runner differs only in its introductory docstring, which now refers to the English README; both the historical and release source digests are recorded.
+The numerical implementation and formal configurations are retained. The numerical update and noise formulas are unchanged. This release updates publication labels and rejects invalid forced-coordinate inputs; see RELEASE_UPDATE_20261108.md. The release runner differs only in its introductory docstring, which now refers to the English README; both the historical and release source digests are recorded.
 
 The original low-dimensional grids include combinations not displayed in the manuscript. They are retained to preserve the original experimental specification. The figures and tables use their documented subsets.
 

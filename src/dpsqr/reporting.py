@@ -17,10 +17,8 @@ from matplotlib.patches import Patch
 from .policy import LOW,HIGH
 from .study import atomic_json
 
-LABELS={'sqr_gd':'DP-SQR-GD','sqr_gd_np':'nonDP-SQR-GD','sqr_sr':'DP-SQR-SR',
-        'sqr_sr_np':'nonDP-SQR-SR','sqr_iht':'DP-SQR-IHT','sqr_iht_np':'nonDP-SQR-IHT',
-        'tran_dpsgd':'Tran-SGD','tran_opm':'Tran-OPM','huber_gd':'DP-Huber-GD',
-        'huber_iht':'DP-Huber-IHT','cai_iht':'Cai-IHT','frappe':'FRAPPE'}
+from .display_names import METHOD_LABELS as LABELS, publication_frame, relabel_tex
+
 COLORS={'sqr_gd':'#377eb8','sqr_gd_np':'#777777','sqr_sr':'#377eb8','sqr_sr_np':'#777777',
         'sqr_iht':'#e69f00','sqr_iht_np':'#bdbdbd','tran_dpsgd':'#cc79a7','tran_opm':'#009e73',
         'huber_gd':'#8e6bb0','huber_iht':'#8e6bb0','cai_iht':'#56b4e9','frappe':'#a6761d'}
@@ -272,12 +270,15 @@ def build(inputs,output,allow_partial=False):
         mask=(tab.regime=='low')&(tab.n_train==1000)&(tab.p==10) if metric=='excess_ql' else tab.regime=='high'
         if metric=='excess_ql':mask=mask|((tab.regime=='high')&(tab.n_train==10000)&(tab.true_sparsity==6))
         compact=tab[mask]
-        if not compact.empty:compact.to_latex(out/f'supp_{metric}.tex',index=False,float_format='%.4f')
+        if not compact.empty:publication_frame(compact).to_latex(out/f'supp_{metric}.tex',index=False,float_format='%.4f')
     f[f.status!='ok'].to_csv(out/'failed_fits.csv',index=False)
     for item in inputs:
         root=Path(item)
         for name in ['coefficients_raw.csv','coefficients_summary.csv','coefficients_table.tex']:
-            if (root/name).exists():shutil.copy2(root/name,out/('real_housing_'+name))
+            if (root/name).exists():
+                target=out/('real_housing_'+name)
+                if name.endswith('.tex'):target.write_text(relabel_tex((root/name).read_text()))
+                else:shutil.copy2(root/name,target)
     atomic_json(out/'figure_manifest.json',dict(inputs=provenance,diagnostic=diagnostic,
                 source_digest=next(iter(signatures)),n_source_rows=len(f),
                 outputs=sorted(p.name for p in out.iterdir() if p.is_file())))

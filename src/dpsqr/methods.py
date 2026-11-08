@@ -1,6 +1,7 @@
-"""Algorithms 3.1, 3.3 and S6.2 of the supplied main/supplement manuscript.
+"""Algorithms 3.1, 3.3 and S7.2 of the supplied main/supplement manuscript.
 
-All tuning and beta0 must be public or separately privatized. These routines
+All tuning and beta0 must be public or separately privatized for privacy.
+Statistical bounds require the stated fixed-public-start distance conditions. These routines
 never fit a scaler or choose parameters from the confidential sample.
 private=False is a paired noise-removal ablation; clip_nonprivate=False gives
 the ordinary, unclipped SQR algorithm. No raw objective/gradient is returned.
@@ -8,7 +9,8 @@ the ordinary, unclipped SQR algorithm. No raw objective/gradient is returned.
 import numpy as np
 from .core import FitResult, data_xy, initial, integer, positive, quantile, score
 from .privacy import rho_from_eps_delta, mu_from_eps_delta
-from .selection import supremum_rank_utilities, peeling, hard_threshold, noisy_ht
+from .selection import (supremum_rank_utilities, peeling, hard_threshold, noisy_ht,
+                        validate_forced_indices)
 
 
 def _setup(X, y, tau, h, eta, steps, beta0):
@@ -60,11 +62,7 @@ def sqr_sr(X, y, *, tau=0.5, h, gamma, eta, steps, size,
     positive("gamma", gamma)
     integer("size", size)
     n, p = X.shape
-    if any(isinstance(j, bool) or int(j) != j for j in forced):
-        raise ValueError("forced indices must be integers")
-    forced = np.asarray(forced, dtype=int)
-    if forced.ndim != 1 or len(np.unique(forced)) != len(forced) or np.any((forced<0)|(forced>=p)):
-        raise ValueError("forced must contain unique valid column indices")
+    forced = validate_forced_indices(forced, p)
     if not len(forced) < size < p:
         raise ValueError("Paper requires len(forced)<size<p")
     if not 0 < screen_fraction < 1:
@@ -107,7 +105,7 @@ def sqr_sr(X, y, *, tau=0.5, h, gamma, eta, steps, size,
 def sqr_iht(X, y, *, tau=0.5, h, gamma, eta, steps, size,
             epsilon=None, delta=None, beta0=None, private=True,
             clip_nonprivate=True, kernel="gaussian", seed=None):
-    """Supplement S6 Algorithm DP-SQR-IHT, manuscript zCDP calibration."""
+    """Supplement S7 Algorithm DP-SQR-IHT, manuscript zCDP calibration."""
     X, y, b = _setup(X, y, tau, h, eta, steps, beta0)
     positive("gamma", gamma)
     integer("size", size)

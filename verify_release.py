@@ -10,6 +10,8 @@ import numpy as np
 import pandas as pd
 from dpsqr.study import source_digest
 from make_tables import build
+from dpsqr.display_names import METHOD_LABELS
+from dpsqr.reporting import LABELS
 
 
 def sha(path):
@@ -73,9 +75,21 @@ def verify(output):
                 decimals = len(displayed.split('.')[1]) if '.' in displayed else 0
                 rounded = float(f'{value:.{decimals}f}')
             assert rounded == float(displayed), (value, displayed)
-    print('PASS: source digest, archive hashes, 12 figure fixtures, and 9 numeric tables')
+    # Display checks supplement the numeric checks; CSV identifiers remain stable.
+    assert LABELS is METHOD_LABELS
+    assert LABELS['tran_dpsgd'] == 'DP-SGD' and LABELS['tran_opm'] == 'OPM'
+    for name in ['low_prediction_error', 'low_prediction_with_frappe',
+                 'housing', 'housing_with_frappe']:
+        generated = (output / f'{name}.tex').read_text()
+        assert 'DP-SGD' in generated and 'OPM' in generated, name
+    for path in list(output.glob('*.tex')) + list(ref.rglob('*.tex')):
+        text = path.read_text()
+        assert not any(old in text for old in
+                       ['Tran-SGD', 'Tran-OPM', r'Tran\\SGD', r'Tran\\OPM',
+                        r'tran\_dpsgd', r'tran\_opm']), path.name
+    print('PASS: source digest, archive hashes, 12 figure fixtures, 9 numeric tables, and publication labels')
     return dict(status='passed', source_digest=source_digest(),
-                figure_fixtures=12, numeric_tables=9,
+                figure_fixtures=12, numeric_tables=9, publication_labels='passed',
                 scope='Archived-data reconstruction; full 300-repeat fits were not rerun')
 
 

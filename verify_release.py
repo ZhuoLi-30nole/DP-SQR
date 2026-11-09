@@ -77,11 +77,11 @@ def verify(output):
             assert rounded == float(displayed), (value, displayed)
     # Display checks supplement the numeric checks; CSV identifiers remain stable.
     assert LABELS is METHOD_LABELS
-    assert LABELS['tran_dpsgd'] == 'DP-SGD' and LABELS['tran_opm'] == 'OPM'
+    assert LABELS['tran_dpsgd'] == 'Adapted DP-SGD' and LABELS['tran_opm'] == 'Adapted OPM'
     for name in ['low_prediction_error', 'low_prediction_with_frappe',
                  'housing', 'housing_with_frappe']:
         generated = (output / f'{name}.tex').read_text()
-        assert 'DP-SGD' in generated and 'OPM' in generated, name
+        assert 'Adapted DP-SGD' in generated and 'Adapted OPM' in generated, name
     for path in list(output.glob('*.tex')) + list(ref.rglob('*.tex')):
         text = path.read_text()
         assert not any(old in text for old in

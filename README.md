@@ -6,7 +6,7 @@ This repository contains the algorithms, experiment configurations, two public b
 
 ## Installation
 
-Use Python 3.12 and a C++17 compiler (`c++` on the command line). DP-SGD and FRAPPE compile their numerical kernels automatically. CVXPY is not required.
+Use Python 3.12 and a C++17 compiler (`c++` on the command line). Adapted DP-SGD and FRAPPE compile their numerical kernels automatically. CVXPY is not required.
 
 ```bash
 python -m venv .venv
@@ -30,13 +30,15 @@ This reads the individual-fit measurements in `paper_results/` and writes to `ou
 
 Generated tables use a simple layout; `reference/tables/` contains the manuscript layouts. The smoothing schematic is authored in the manuscript's LaTeX/TikZ source. Method-comparison and theoretical tables are described in the [manuscript-to-code map](docs/REPRODUCIBILITY.md).
 
+The implemented quantile comparators are labeled **Adapted DP-SGD** and **Adapted OPM**. Internal identifiers `tran_dpsgd` and `tran_opm` and all archived measurements are unchanged. This label revision does not change algorithms, tuning, or numerical results.
+
 ## Rerun experiments from the data
 
 ```bash
 python reproduce.py --mode full --workers 1
 ```
 
-This runs nine formal configurations and seven screening scenarios with 300 repetitions, then rebuilds the figures and tables. The configurations comprise 750,000 method fits plus 10,500 screening fits, so a full rerun requires substantial computation. DP-SGD uses `n²−1` updates. The low-dimensional grids include settings beyond the paper's displayed subsets; plotting and table scripts select the documented subsets.
+This runs nine formal configurations and seven screening scenarios with 300 repetitions, then rebuilds the figures and tables. The configurations comprise 750,000 method fits plus 10,500 screening fits, so a full rerun requires substantial computation. Adapted DP-SGD uses `n²−1` updates. The low-dimensional grids include settings beyond the paper's displayed subsets; plotting and table scripts select the documented subsets.
 
 Individual groups can be run separately:
 
@@ -76,7 +78,7 @@ These execute small fits to check the workflow; the paper's study uses 300 repet
 
 ## Validation
 
-All 19 tests passed. Archived reconstruction of 12 figures and 10 tables passed, including checks of the nine numeric tables against the manuscript and checks of publication labels. Small fitting runs were also exercised. The complete 300-repetition study has not been rerun as part of this verification. See [validation details](docs/RELEASE_AUDIT.md).
+All 20 tests passed. Archived reconstruction of 12 figures and 10 tables passed, including checks of the nine numeric tables against the manuscript and checks of publication labels. Small fitting runs were also exercised. The complete 300-repetition study has not been rerun as part of this verification. See [validation details](docs/RELEASE_AUDIT.md).
 
 ## Data and method scope
 

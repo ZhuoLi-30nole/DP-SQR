@@ -13,7 +13,7 @@ python -m pip install -r requirements.txt
 python run.py check --tests
 ```
 
-DP-SGD and FRAPPE compile their numerical kernels automatically. CVXPY is not required. `requirements-locked.txt` records the verification environment; a fresh dependency installation has not been tested.
+Adapted DP-SGD and FRAPPE compile their numerical kernels automatically. CVXPY is not required. `requirements-locked.txt` records the verification environment; a fresh dependency installation has not been tested.
 
 ## Reconstruct the paper's figures and tables
 

@@ -8,7 +8,7 @@ The repository includes the algorithms and privacy accounting, nine formal exper
 
 ## Verified checks
 
-- All 19 code tests passed, covering numerical/protocol behavior, forced-coordinate validation, and display labels.
+- All 20 code tests passed, covering numerical/protocol behavior, forced-coordinate validation, and display labels.
 - Both benchmark datasets loaded with the expected shapes: Housing `(20640, 5)` and Crime `(1994, 98)`.
 - Four small experiment grids and a small screening study completed successfully.
 - Archived reconstruction of all 12 figures and 10 tables passed. Nine numeric tables matched the manuscript at the displayed precision; the application-design table matched the configurations.
@@ -21,3 +21,7 @@ The complete study of 750,000 formal method fits and 10,500 screening fits has n
 Verification used an existing Python 3.12.10 environment. A fresh dependency installation has not been tested. Installed versions are recorded in `../requirements-locked.txt`; results across operating systems and numerical libraries need not be bitwise identical.
 
 Machine-readable validation records are in `validation.json`. File hashes and the repository inventory are in `../RELEASE_MANIFEST.json`. Archived fit provenance is retained under `../paper_results/` for traceability.
+
+## Comparator label revision
+
+The 2026-11-09 update uses Adapted DP-SGD and Adapted OPM in publication outputs. Seven reference figure legends and the corresponding table labels were updated; archived measurements and fitting algorithms were retained. See [revision details](LABEL_REVISION_20261109.md) and the dated entry in `validation.json`.

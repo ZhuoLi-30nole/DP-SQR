@@ -438,17 +438,19 @@
       "document": "main",
       "paper_file": "fig2_no_frappe.pdf",
       "generated_file": "without_frappe/sim_low_overview.pdf",
-      "paper_sha256": "2ac689273bf568422626f88eb64711bbd6ef9ce83eb78b27ccacf9ffcf7438ed",
+      "paper_sha256": "93560f5a6f757f69971de82819b69a3f5da819278cf29788752e3b76328a01ff",
       "release_generated_file": "fig2_no_frappe.pdf",
-      "previous_paper_sha256": "0f346886e26d703f1409f89fc2daf02275c9c21ca9a7af16d557169d997aa529"
+      "previous_paper_sha256": "0f346886e26d703f1409f89fc2daf02275c9c21ca9a7af16d557169d997aa529",
+      "pre_adapted_label_sha256": "2ac689273bf568422626f88eb64711bbd6ef9ce83eb78b27ccacf9ffcf7438ed"
     },
     {
       "document": "main",
       "paper_file": "fig3_no_frappe.pdf",
       "generated_file": "without_frappe/figure3_quantiles.pdf",
-      "paper_sha256": "23395d240872b4de024ecd0c20158de63b40875249289f74c371344ad4c90b98",
+      "paper_sha256": "c2626df2b6d037f39241c1b4b990d2e3f1d5c12817bd568466f890a50fdd8c86",
       "release_generated_file": "fig3_no_frappe.pdf",
-      "previous_paper_sha256": "69ae90ce5eec36fecef941f77c51c05be34f848da1194378dd99bc05512a62d2"
+      "previous_paper_sha256": "69ae90ce5eec36fecef941f77c51c05be34f848da1194378dd99bc05512a62d2",
+      "pre_adapted_label_sha256": "23395d240872b4de024ecd0c20158de63b40875249289f74c371344ad4c90b98"
     },
     {
       "document": "main",
@@ -470,9 +472,10 @@
       "document": "main",
       "paper_file": "figure6_housing_no_frappe.pdf",
       "generated_file": "figure6_housing_no_frappe.pdf",
-      "paper_sha256": "b39c5c75d218fdb8e4c892937d9aaf21d86ccb9186fdce1000316c937ee3cae0",
+      "paper_sha256": "f0969003f9f46266ceefddf956e25d2f0907f6cd6aef3f64c9673e3b8d075890",
       "release_generated_file": "figure6_housing_no_frappe.pdf",
-      "previous_paper_sha256": "74ddf815aeb0c28a52d94871c53818d68ca2aa2eb624018868c5ced7a1c90d92"
+      "previous_paper_sha256": "74ddf815aeb0c28a52d94871c53818d68ca2aa2eb624018868c5ced7a1c90d92",
+      "pre_adapted_label_sha256": "b39c5c75d218fdb8e4c892937d9aaf21d86ccb9186fdce1000316c937ee3cae0"
     },
     {
       "document": "main",
@@ -486,25 +489,28 @@
       "document": "supp",
       "paper_file": "fig2_with_frappe.pdf",
       "generated_file": "full/sim_low_overview.pdf",
-      "paper_sha256": "b5bf75bbe7b33d27fcda0620067a8d42e34f5795a5e972be5abebe384223f2e1",
+      "paper_sha256": "faf7317ef4cdb9fd56c015093692b8b64fb4dcd5ab635946d6750462e9aac162",
       "release_generated_file": "fig2_with_frappe.pdf",
-      "previous_paper_sha256": "386f158a0a23e57a2ca86a594e58a87aeb44004f730b05c600fe8c8ba2a63352"
+      "previous_paper_sha256": "386f158a0a23e57a2ca86a594e58a87aeb44004f730b05c600fe8c8ba2a63352",
+      "pre_adapted_label_sha256": "b5bf75bbe7b33d27fcda0620067a8d42e34f5795a5e972be5abebe384223f2e1"
     },
     {
       "document": "supp",
       "paper_file": "fig3_with_frappe.pdf",
       "generated_file": "full/figure3_quantiles.pdf",
-      "paper_sha256": "447326162ab7e2c30f810772b03a678b4b2409caa7e4529388843fac360cebfd",
+      "paper_sha256": "8a3ad0ef951654345ba566b50cc3340e5490b4d8f44f894e2a39faa2e0f18d29",
       "release_generated_file": "fig3_with_frappe.pdf",
-      "previous_paper_sha256": "bfea51f5b7440d40a19fad6d4887b05f3b16366e2802e8b119fea1a19935b643"
+      "previous_paper_sha256": "bfea51f5b7440d40a19fad6d4887b05f3b16366e2802e8b119fea1a19935b643",
+      "pre_adapted_label_sha256": "447326162ab7e2c30f810772b03a678b4b2409caa7e4529388843fac360cebfd"
     },
     {
       "document": "supp",
       "paper_file": "sim_low_dimensions.pdf",
       "generated_file": "sim_low_dimensions.pdf",
-      "paper_sha256": "a84791f6a8f59d431b8479d1ba7b5f8c98b71a1fe6cf16b0d5b5e47868639c5e",
+      "paper_sha256": "c7303df2e2620d27af4614adaeb88364733a21e91cf6693aba1c1f82ea649533",
       "release_generated_file": "sim_low_dimensions.pdf",
-      "previous_paper_sha256": "58a589df5a977bc32a9c213d037b6e62dca07d95ac9796c08a167f307f69610b"
+      "previous_paper_sha256": "58a589df5a977bc32a9c213d037b6e62dca07d95ac9796c08a167f307f69610b",
+      "pre_adapted_label_sha256": "a84791f6a8f59d431b8479d1ba7b5f8c98b71a1fe6cf16b0d5b5e47868639c5e"
     },
     {
       "document": "supp",
@@ -526,9 +532,10 @@
       "document": "supp",
       "paper_file": "figure6_housing.pdf",
       "generated_file": "figure6_housing.pdf",
-      "paper_sha256": "5113481c28d7823732b30b0971e74b7d81a8aaa9db4eeb7567efcd29389c491a",
+      "paper_sha256": "6d1c98990a46ce4419030b6a4cfe07fd35927923dd96230751ee321fc6437a32",
       "release_generated_file": "figure6_housing.pdf",
-      "previous_paper_sha256": "b1a1d4dc87ae36d747ba2f88df04a658b3e51ccff2edfd7a1eb9457545d328f2"
+      "previous_paper_sha256": "b1a1d4dc87ae36d747ba2f88df04a658b3e51ccff2edfd7a1eb9457545d328f2",
+      "pre_adapted_label_sha256": "5113481c28d7823732b30b0971e74b7d81a8aaa9db4eeb7567efcd29389c491a"
     }
   ],
   "manuscript_sha256": {
@@ -536,7 +543,7 @@
     "supp": "93488cab73a3a56410c4d8f0d4a36b0101d3bd13fbe56c152f34816851b7a91f"
   },
   "scope": "Archived numerical results; projected columns retain original numeric strings. No rerun was used to construct this archive.",
-  "release_source_digest": "369cba5205fffd9aa777f07d554644e8746ad707eb7a1eb4e35fff44734d8f34",
+  "release_source_digest": "27e8224faa74434be90f6d405144a013893452916b5ac6c09dbc46cf64116c18",
   "runner_docstring_revision": {
     "file": "run.py",
     "original_sha256": "5ddffbe263ff7293eae20607a3fb9acd2711e00e57cbdce49a8b50839cbb9ffe",
@@ -554,5 +561,11 @@
     "manuscript_snapshot": "2026-11-07 final_clean",
     "base_commit": "fc9a5620a95a12c8b295ea5f2501c14e65b75061",
     "scope": "Publication labels, forced-index validation, documentation and final reference fixtures; archived measurements and formal configurations unchanged."
+  },
+  "label_revision_20261109": {
+    "base_commit": "0be4c6426001820296a3c0e3404f2b4ebf6c2056",
+    "previous_release_source_digest": "369cba5205fffd9aa777f07d554644e8746ad707eb7a1eb4e35fff44734d8f34",
+    "release_source_digest": "27e8224faa74434be90f6d405144a013893452916b5ac6c09dbc46cf64116c18",
+    "scope": "Adapted comparator publication labels and reference fixtures only; original fit provenance and archived measurements preserved."
   }
 }

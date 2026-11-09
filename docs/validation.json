@@ -238,5 +238,79 @@
       "count": 6,
       "passed": 6
     }
+  },
+  "label_revision_20261109": {
+    "date": "2026-11-09",
+    "base_commit": "0be4c6426001820296a3c0e3404f2b4ebf6c2056",
+    "unit_tests": {
+      "count": 20,
+      "passed": 20
+    },
+    "archive_measurements_unchanged": true,
+    "algorithm_and_runner_files_unchanged": true,
+    "formal_configurations_unchanged": true,
+    "reference_figures": 12,
+    "updated_reference_legends": 7,
+    "previous_release_source_digest": "369cba5205fffd9aa777f07d554644e8746ad707eb7a1eb4e35fff44734d8f34",
+    "release_source_digest": "27e8224faa74434be90f6d405144a013893452916b5ac6c09dbc46cf64116c18",
+    "full_experiments_rerun": false,
+    "archived_reconstruction": {
+      "status": "passed",
+      "source_digest": "27e8224faa74434be90f6d405144a013893452916b5ac6c09dbc46cf64116c18",
+      "figure_fixtures": 12,
+      "numeric_tables": 9,
+      "publication_labels": "passed",
+      "scope": "Archived-data reconstruction; full 300-repeat fits were not rerun"
+    },
+    "generated_figure_checks": [
+      {
+        "figure": "fig2_no_frappe",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "fig2_with_frappe",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "fig3_no_frappe",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "fig3_with_frappe",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "figure5_robustness_eps0.75",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "figure5_robustness_eps1",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "figure6_housing",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "figure6_housing_no_frappe",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "figure7_community_log",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "sim_high_core",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "sim_high_support_size",
+        "generated_pixels_match_verified_name_only_package": true
+      },
+      {
+        "figure": "sim_low_dimensions",
+        "generated_pixels_match_verified_name_only_package": true
+      }
+    ]
   }
 }

@@ -38,8 +38,8 @@ class ReleaseUpdateTests(unittest.TestCase):
     def test_one_display_mapping_for_plots(self):
         from dpsqr.reporting import LABELS
         self.assertIs(LABELS, METHOD_LABELS)
-        self.assertEqual(LABELS['tran_dpsgd'], 'DP-SGD')
-        self.assertEqual(LABELS['tran_opm'], 'OPM')
+        self.assertEqual(LABELS['tran_dpsgd'], 'Adapted DP-SGD')
+        self.assertEqual(LABELS['tran_opm'], 'Adapted OPM')
 
     def test_publication_frame_does_not_mutate_machine_data(self):
         original = pd.DataFrame({'tran_dpsgd': [1.25], 'tran_opm': [2.5],
@@ -47,15 +47,15 @@ class ReleaseUpdateTests(unittest.TestCase):
         before = original.copy(deep=True)
         displayed = publication_frame(original)
         pd.testing.assert_frame_equal(original, before)
-        self.assertEqual(list(displayed.columns), ['DP-SGD', 'OPM', 'method'])
-        self.assertEqual(list(displayed.index), ['DP-SGD'])
-        self.assertEqual(displayed.loc['DP-SGD', 'method'], 'OPM')
-        self.assertEqual(displayed.loc['DP-SGD', 'DP-SGD'], 1.25)
+        self.assertEqual(list(displayed.columns), ['Adapted DP-SGD', 'Adapted OPM', 'method'])
+        self.assertEqual(list(displayed.index), ['Adapted DP-SGD'])
+        self.assertEqual(displayed.loc['Adapted DP-SGD', 'method'], 'Adapted OPM')
+        self.assertEqual(displayed.loc['Adapted DP-SGD', 'Adapted DP-SGD'], 1.25)
 
     def test_pairwise_comparisons_are_labeled_for_publication(self):
         frame = pd.DataFrame({'first': ['sqr_gd'], 'reference': ['tran_opm']})
         displayed = publication_frame(frame)
-        self.assertEqual(displayed.iloc[0].tolist(), ['DP-SQR-GD', 'OPM'])
+        self.assertEqual(displayed.iloc[0].tolist(), ['DP-SQR-GD', 'Adapted OPM'])
         self.assertEqual(frame.iloc[0].tolist(), ['sqr_gd', 'tran_opm'])
 
     def test_table_export_labels_tex_and_preserves_csv_keys(self):
@@ -65,11 +65,19 @@ class ReleaseUpdateTests(unittest.TestCase):
             output = Path(tmp)
             publish(frame, output, 'example')
             text = (output / 'example.tex').read_text()
-            self.assertIn('DP-SGD', text)
-            self.assertIn('OPM', text)
+            self.assertIn('Adapted DP-SGD', text)
+            self.assertIn('Adapted OPM', text)
             self.assertNotIn(r'tran\_', text)
             self.assertEqual(list(pd.read_csv(output / 'example.csv').columns),
                              ['tran_dpsgd', 'tran_opm'])
+
+    def test_tex_labels_are_idempotent_and_preserve_values(self):
+        from dpsqr.display_names import relabel_tex
+        original = (r"Tran-SGD & tran\_dpsgd & DP-SGD & Adapted DP-SGD & "
+                    r"Tran-OPM & tran\_opm & OPM & Adapted OPM & 1.25")
+        expected = " & ".join(["Adapted DP-SGD"] * 4 + ["Adapted OPM"] * 4 + ["1.25"])
+        self.assertEqual(relabel_tex(original), expected)
+        self.assertEqual(relabel_tex(expected), expected)
 
 if __name__ == '__main__':
     unittest.main()

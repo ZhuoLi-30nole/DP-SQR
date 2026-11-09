@@ -1,8 +1,8 @@
 {
-  "release_date": "2026-11-08",
+  "release_date": "2026-11-09",
   "purpose": "Reproduction code, data, and archived measurements for the accompanying paper",
   "original_source_digest": "2932e7942f69ef8ef7c4296a9aeeeba80e7c5d2f69150d5e89c3210534c59afc",
-  "release_source_digest": "369cba5205fffd9aa777f07d554644e8746ad707eb7a1eb4e35fff44734d8f34",
+  "release_source_digest": "27e8224faa74434be90f6d405144a013893452916b5ac6c09dbc46cf64116c18",
   "files": [
     {
       "path": ".gitignore",
@@ -11,13 +11,13 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 5592,
-      "sha256": "2376dbbb8295be73603ca518300f26b70b863ec387b01eb3356526af37d7c690"
+      "size_bytes": 5870,
+      "sha256": "26ba314cc4c78e39ffdeb05c10790739ea50d6ac3cf3a29d840a3f9b2fb6889b"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "size_bytes": 2049,
-      "sha256": "bcee2fbf428856795f1fc3158771da65974fc63b9d7ec8642926e60afb1388e7"
+      "size_bytes": 2057,
+      "sha256": "fe56f57edc1e33e9fd03547f62af1ae971ac0daca096e2d2b40202d95d076804"
     },
     {
       "path": "configs/real_crime.json",
@@ -106,18 +106,23 @@
     },
     {
       "path": "docs/EXPERIMENT_PROTOCOL.md",
-      "size_bytes": 12954,
-      "sha256": "d1ae2d1378dd66d0760d2b03d2a7e4690b759349bc5949a17180e551dbe7b7af"
+      "size_bytes": 13026,
+      "sha256": "a7e35eae8e5dd563df77a1b6fc218b53f0b4e2d1d471675b1913ff552a904b4d"
+    },
+    {
+      "path": "docs/LABEL_REVISION_20261109.md",
+      "size_bytes": 1490,
+      "sha256": "14e4b08bf25349e4eb36c21ae5a1424a5dcc9ba6fac729a919483ce4218d46be"
     },
     {
       "path": "docs/QUICKSTART.md",
-      "size_bytes": 2975,
-      "sha256": "932b9628ce1670286fe65e835d8b2a216e1f003fa02d25d57e11844af277c80b"
+      "size_bytes": 2983,
+      "sha256": "f50841d98dd132130b16ba811a737b5ee41d264969da803e7322f5f6a7eeb288"
     },
     {
       "path": "docs/RELEASE_AUDIT.md",
-      "size_bytes": 1987,
-      "sha256": "b84e0000a15972c29e5e2258ed2c81d190d094701d8473ef890be5b2e56d03ce"
+      "size_bytes": 2333,
+      "sha256": "d8883461e47940f179b29e0fe6e86f40a2305417715024c653e514cd30917f66"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
@@ -131,8 +136,8 @@
     },
     {
       "path": "docs/validation.json",
-      "size_bytes": 4935,
-      "sha256": "62a01c5f3f9da54ba547aaa05b0e66bb7ba3fe22e9702053369f59adc41b27cd"
+      "size_bytes": 7423,
+      "sha256": "b19818904a1a0ec86bb2e820142a0d63442becc8015a93985464628a72611fc0"
     },
     {
       "path": "export_results.py",
@@ -161,8 +166,8 @@
     },
     {
       "path": "paper_results/manifest.json",
-      "size_bytes": 17244,
-      "sha256": "268a7f4cc7f170c1546d37b7698e5a351984a99dc7c6a9e8270c28760bb3d806"
+      "size_bytes": 18403,
+      "sha256": "181575d64bfc5531e47817fb2517ce644f1262be2787c66e294660f8ecc6c803"
     },
     {
       "path": "paper_results/plot_sources/real_crime_quantile_grid_source.csv.gz",
@@ -276,23 +281,23 @@
     },
     {
       "path": "reference/figures/fig2_no_frappe.pdf",
-      "size_bytes": 70917,
-      "sha256": "2ac689273bf568422626f88eb64711bbd6ef9ce83eb78b27ccacf9ffcf7438ed"
+      "size_bytes": 71318,
+      "sha256": "93560f5a6f757f69971de82819b69a3f5da819278cf29788752e3b76328a01ff"
     },
     {
       "path": "reference/figures/fig2_with_frappe.pdf",
-      "size_bytes": 74893,
-      "sha256": "b5bf75bbe7b33d27fcda0620067a8d42e34f5795a5e972be5abebe384223f2e1"
+      "size_bytes": 74919,
+      "sha256": "faf7317ef4cdb9fd56c015093692b8b64fb4dcd5ab635946d6750462e9aac162"
     },
     {
       "path": "reference/figures/fig3_no_frappe.pdf",
-      "size_bytes": 80538,
-      "sha256": "23395d240872b4de024ecd0c20158de63b40875249289f74c371344ad4c90b98"
+      "size_bytes": 81253,
+      "sha256": "c2626df2b6d037f39241c1b4b990d2e3f1d5c12817bd568466f890a50fdd8c86"
     },
     {
       "path": "reference/figures/fig3_with_frappe.pdf",
-      "size_bytes": 83051,
-      "sha256": "447326162ab7e2c30f810772b03a678b4b2409caa7e4529388843fac360cebfd"
+      "size_bytes": 83425,
+      "sha256": "8a3ad0ef951654345ba566b50cc3340e5490b4d8f44f894e2a39faa2e0f18d29"
     },
     {
       "path": "reference/figures/figure5_robustness_eps0.75.pdf",
@@ -306,13 +311,13 @@
     },
     {
       "path": "reference/figures/figure6_housing.pdf",
-      "size_bytes": 117260,
-      "sha256": "5113481c28d7823732b30b0971e74b7d81a8aaa9db4eeb7567efcd29389c491a"
+      "size_bytes": 117601,
+      "sha256": "6d1c98990a46ce4419030b6a4cfe07fd35927923dd96230751ee321fc6437a32"
     },
     {
       "path": "reference/figures/figure6_housing_no_frappe.pdf",
-      "size_bytes": 112568,
-      "sha256": "b39c5c75d218fdb8e4c892937d9aaf21d86ccb9186fdce1000316c937ee3cae0"
+      "size_bytes": 113278,
+      "sha256": "f0969003f9f46266ceefddf956e25d2f0907f6cd6aef3f64c9673e3b8d075890"
     },
     {
       "path": "reference/figures/figure7_community_log.pdf",
@@ -331,28 +336,28 @@
     },
     {
       "path": "reference/figures/sim_low_dimensions.pdf",
-      "size_bytes": 73832,
-      "sha256": "a84791f6a8f59d431b8479d1ba7b5f8c98b71a1fe6cf16b0d5b5e47868639c5e"
+      "size_bytes": 73858,
+      "sha256": "c7303df2e2620d27af4614adaeb88364733a21e91cf6693aba1c1f82ea649533"
     },
     {
       "path": "reference/tables/low_prediction_error.tex",
-      "size_bytes": 1875,
-      "sha256": "a43fb09731345183996f33b5b43a831a1cd7ab9520db6245eaf842bacebef4cf"
+      "size_bytes": 1891,
+      "sha256": "06f7ea7d1c8661d8217bf8b61da72d1884971bdab86ad1eee466f40653aed7ca"
     },
     {
       "path": "reference/tables/low_prediction_with_frappe.tex",
-      "size_bytes": 2127,
-      "sha256": "93359face67da0f0d1af933246fa49a6257c23cb838ec951e45703489323f595"
+      "size_bytes": 2143,
+      "sha256": "5bd3954730c2ef76753ed8afe64b5530ec1fd26c0c6274bed108458f82b55317"
     },
     {
       "path": "reference/tables/real_coefficients/housing.tex",
-      "size_bytes": 1946,
-      "sha256": "ec059cb4e34eb56d0db9687559de19d0c3a7739c15ab4b50213228fd2877d9ce"
+      "size_bytes": 1962,
+      "sha256": "bf4dfc18a4ee43990a69bc76dcabfc230dd48da49a682e0a7b6d19ff136277e0"
     },
     {
       "path": "reference/tables/real_coefficients/housing_with_frappe.tex",
-      "size_bytes": 2272,
-      "sha256": "06869710c43377ea472bed752fadf7bafaa2894cac4c50b11429196c199d7593"
+      "size_bytes": 2288,
+      "sha256": "23ed09fbef02446ece5204721f315610d1d1d1417a69f715e3f2fb5bb1bdf8f8"
     },
     {
       "path": "reference/tables/real_design.tex",
@@ -366,8 +371,8 @@
     },
     {
       "path": "reference/tables/tab_real-data-paired.tex",
-      "size_bytes": 669,
-      "sha256": "f2d49a61da7d5a6d44c6506474b0a553779d66990e38915f43f0521fbd49b5f5"
+      "size_bytes": 685,
+      "sha256": "1fde788d907ab761d561d06deabb0900fb46303dd29360dc623a61d1b08e0103"
     },
     {
       "path": "reference/tables/tab_screening-stress.tex",
@@ -471,8 +476,8 @@
     },
     {
       "path": "src/dpsqr/display_names.py",
-      "size_bytes": 1248,
-      "sha256": "9778c2c85e136c0197a8ca2593970740374118cd048ea626962c3730712ca64f"
+      "size_bytes": 1454,
+      "sha256": "608b0f4679fd21573f8054ec43f00ae400d1f7a3d55d734c96e18051a17227cf"
     },
     {
       "path": "src/dpsqr/initialization.py",
@@ -531,14 +536,18 @@
     },
     {
       "path": "tests/test_release_update.py",
-      "size_bytes": 3749,
-      "sha256": "221a0c7f687318dcc9a894aad2f5994ccacf90c87666c7b247445ac1073f5036"
+      "size_bytes": 4314,
+      "sha256": "b28e9d57424bda425761ae18c03479914e0739f74a251dd0902677fbc0e88eaa"
     },
     {
       "path": "verify_release.py",
-      "size_bytes": 5327,
-      "sha256": "d97f240ff259d3dc751898112639750b9f692e18d0322c8361e22f369932f549"
+      "size_bytes": 5359,
+      "sha256": "ad6decfbb0475527f5c7ef843146a131a9acf0fdd5b46f9b57df335bd94b2f20"
     }
   ],
-  "total_bytes_without_manifest": 24595083
+  "total_bytes_without_manifest": 24595083,
+  "label_revision": {
+    "date": "2026-11-09",
+    "scope": "Publication-only adapted comparator names; experimental values unchanged."
+  }
 }

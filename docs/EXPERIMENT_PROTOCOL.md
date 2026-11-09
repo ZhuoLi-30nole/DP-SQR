@@ -8,7 +8,7 @@ Protocol version: `20261101-fixed-rules-v1`. Changed settings require new fits r
 
 **High dimensions.** The ambient dimension is `p=12000`, including the intercept. Slopes have a Gaussian AR(1) design with correlation 0.1; coefficient signs use seed 0. The core design has five active slopes and an intercept, all of magnitude one. The working dimension is 12. The core grid uses Gaussian errors, `tau=.5`, `n=5000/7500/10000`, and `epsilon=.5/.75/1`. Robustness comparisons fix `n=10000`, use three quantiles and Gaussian/t2.25/Cauchy errors, and use `epsilon=.75/1`. Overlapping Gaussian median fits are reused from the core grid. The support-size supplement uses three or nine active slopes, `n=10000`, Gaussian errors, `tau=.5`, and `epsilon=.75/1`. There are 29 distinct high-dimensional conditions, each with 300 repetitions.
 
-The standard low-dimensional methods are SQR-GD, its nonprivate counterpart, DP-SGD, and OPM; Huber-GD and FRAPPE are added at the median, including under Cauchy errors. The standard high-dimensional methods are SQR-SR/IHT and their nonprivate counterparts; Huber-IHT is added at the median, including under Cauchy errors. Cai-IHT is compared only at the Gaussian/t2.25 median. Huber comparisons under Cauchy errors are empirical stress tests and are not interpreted as requiring an existing finite conditional mean.
+The standard low-dimensional methods are SQR-GD, its nonprivate counterpart, Adapted DP-SGD, and Adapted OPM; Huber-GD and FRAPPE are added at the median, including under Cauchy errors. The standard high-dimensional methods are SQR-SR/IHT and their nonprivate counterparts; Huber-IHT is added at the median, including under Cauchy errors. Cai-IHT is compared only at the Gaussian/t2.25 median. Huber comparisons under Cauchy errors are empirical stress tests and are not interpreted as requiring an existing finite conditional mean.
 
 The primary low-dimensional metric is parameter L2 error. High-dimensional metrics are parameter L2 error and slope Recall. Supplemental metrics are excess quantile loss and full-support coverage. Excess loss is calculated by subtracting losses on the same test observations and then averaging; negative values are allowed. Prediction-function MSE, marginal calibration error, and separate stability/timing reports are excluded from the final presentation.
 
@@ -33,8 +33,8 @@ All entries are stage-specific `(epsilon, delta)` allocations for one complete f
 | SQR-SR | 3e/4, d/3 | e/12, d/3 | e/6, d/3 |
 | SQR-IHT | e/3, 0 | e/12, d/2 | 7e/12, d/2 |
 | Huber-IHT | e/3, 0 | e/3, d/2 | e/3, d/2 |
-| DP-SGD | None | Zero initial vector | e, min(d, 1/n) |
-| OPM | None | Zero initial vector | e, 0 |
+| Adapted DP-SGD | None | Zero initial vector | e, min(d, 1/n) |
+| Adapted OPM | None | Zero initial vector | e, 0 |
 | Cai-IHT | None | Zero initial vector | e, d |
 | FRAPPE | None | e/3, d/3 after amplification | 2e/3, 2d/3 |
 
@@ -56,8 +56,8 @@ Ridge initialization uses a fixed numerical iteration budget and a uniform optim
 | Huber-GD | B=.5 sqrt(p+log n) | .2 | ceil(3 log n) |
 | Huber-IHT | B=max(1,.5 sqrt(log(pn))); retain intercept | .01 | ceil(3 log n) |
 | Cai-IHT | X bound 5; response bound 4 sqrt(log n); parameter radius 4 | 2/15 | ceil(3 log n) |
-| DP-SGD | Logistic; h=.5; Cx=sqrt(p); reference radius 10 | Original public formula | n^2-1, with averaging |
-| OPM | Logistic; low-dimensional h; Cx=sqrt(p) | Not applicable | One fixed perturbation followed by optimization |
+| Adapted DP-SGD | Logistic; h=.5; Cx=sqrt(p); reference radius 10 | Original public formula | n^2-1, with averaging |
+| Adapted OPM | Logistic; low-dimensional h; Cx=sqrt(p) | Not applicable | One fixed perturbation followed by optimization |
 | FRAPPE | See below | .9/p | 10 outer iterations; ceil(3 log n) inner iterations |
 
 SQR bandwidths in high dimensions always use ambient dimension `p`, rather than selected dimension `s`. The fixed numerical step sizes in the applications are not claimed to estimate population curvature or be optimal. SQR does not automatically inherit Chang's Huber statistical error theorem; actual sensitivity depends on the step size and `c_tau`.
@@ -84,8 +84,8 @@ The parameter-error theorems apply to fixed public starting vectors satisfying t
 
 ## Quantile-comparator attribution and implementation
 
-DP-SGD and objective perturbation build on Chen and Chua (ICML 2023), who provide excess-risk results and an objective-perturbation parameter-error bound. The comparator implementations use the Tran, Reimherr and Slavkovic (2024) code lineage; their smoothed KNG contribution is separate. Internal identifiers `tran_dpsgd` and `tran_opm` are retained for archive compatibility.
+Adapted DP-SGD and objective perturbation build on Chen and Chua (ICML 2023), who provide excess-risk results and an objective-perturbation parameter-error bound. The comparator implementations use the Tran, Reimherr and Slavkovic (2024) code lineage; their smoothed KNG contribution is separate. Internal identifiers `tran_dpsgd` and `tran_opm` are retained for archive compatibility.
 
-DP-SGD uses the public constant-step reference formula with fixed logistic bandwidth 0.5, rather than enforcing the original theorem's bandwidth/step coupling. OPM draws one isotropic radial perturbation with a Gamma-distributed radius, applies replace-one calibration, and solves the resulting ridge-regularized objective with BFGS. This differs from the Gaussian draw in Chen and Chua's Algorithm 2. These are adapted comparators, as described in Supplementary Section S8.5, rather than claims of exact replication.
+Adapted DP-SGD uses the public constant-step reference formula with fixed logistic bandwidth 0.5, rather than enforcing the original theorem's bandwidth/step coupling. Adapted OPM draws one isotropic radial perturbation with a Gamma-distributed radius, applies replace-one calibration, and solves the resulting ridge-regularized objective with BFGS. This differs from the Gaussian draw in Chen and Chua's Algorithm 2. These are adapted comparators, as described in Supplementary Section S8.5, rather than claims of exact replication.
 
 Sources: https://proceedings.mlr.press/v202/chen23d.html and https://doi.org/10.1007/978-3-031-69651-0_2 .
